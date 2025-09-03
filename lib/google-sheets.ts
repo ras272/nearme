@@ -134,7 +134,14 @@ function getCacheKey(selectedTreatment?: string, userLat?: number, userLng?: num
   return `${treatment}-${location}`
 }
 
-function getCachedData(cacheKey: string): Clinic[] | null {
+function getCachedData(cacheKey: string, forceRefresh: boolean = false): Clinic[] | null {
+  // Developer mode: bypass cache if refresh=true in URL
+  if (forceRefresh) {
+    console.log('🔄 Developer mode: Force refresh enabled, bypassing cache')
+    clinicCache = null
+    return null
+  }
+  
   if (!clinicCache || clinicCache.key !== cacheKey) {
     return null
   }
@@ -287,9 +294,17 @@ export async function fetchClinicsFromSheets(
   selectedTreatment?: string
 ): Promise<Clinic[]> {
   try {
-    // Check cache first
+    // Check for developer mode (force refresh)
+    const forceRefresh = typeof window !== 'undefined' && 
+      new URLSearchParams(window.location.search).get('refresh') === 'true'
+    
+    if (forceRefresh) {
+      console.log('🛠️ Developer mode activated: refresh=true detected')
+    }
+    
+    // Check cache first (unless force refresh)
     const cacheKey = getCacheKey(selectedTreatment, userLat, userLng)
-    const cachedData = getCachedData(cacheKey)
+    const cachedData = getCachedData(cacheKey, forceRefresh)
     if (cachedData) {
       return cachedData
     }

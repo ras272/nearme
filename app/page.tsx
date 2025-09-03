@@ -45,9 +45,15 @@ export default function ClinicFinder() {
   const [treatmentOptions, setTreatmentOptions] = useState<string[]>(AVAILABLE_TREATMENTS)
   const [selectedClinicName, setSelectedClinicName] = useState<string>("") // Nuevo estado para clínica seleccionada
   const [clinicNameOptions, setClinicNameOptions] = useState<string[]>([]) // Nuevo estado para opciones de clínicas
+  const [isDeveloperMode, setIsDeveloperMode] = useState(false) // Estado para modo desarrollador
 
   // Load clinic data on component mount
   useEffect(() => {
+    // Check for developer mode
+    const urlParams = new URLSearchParams(window.location.search)
+    const refreshParam = urlParams.get('refresh')
+    setIsDeveloperMode(refreshParam === 'true')
+    
     loadClinics()
     requestUserLocation()
   }, [])
@@ -146,7 +152,7 @@ export default function ClinicFinder() {
       })
     }
 
-    if (selectedEquipment) {
+    if (selectedEquipment && selectedEquipment !== "Todos los equipos") {
       filtered = filtered.filter((clinic) => clinic.equipment.includes(selectedEquipment))
     }
 
@@ -412,6 +418,13 @@ export default function ClinicFinder() {
                   Encuentra clínicas con equipos Ares Paraguay
                 </p>
               </div>
+              {isDeveloperMode && (
+                <div className="ml-2">
+                  <Badge className="bg-yellow-100 text-yellow-800 border-yellow-300 text-xs">
+                    🛠️ Dev Mode
+                  </Badge>
+                </div>
+              )}
             </div>
 
             <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -472,6 +485,7 @@ export default function ClinicFinder() {
                       <SelectValue placeholder="Seleccionar equipo" />
                     </SelectTrigger>
                     <SelectContent>
+                      <SelectItem value="Todos los equipos">Todos los equipos</SelectItem>
                       {equipmentOptions.map((equipment) => (
                         <SelectItem key={equipment} value={equipment}>
                           {equipment}
