@@ -199,6 +199,128 @@ function recordApiCall(): void {
   console.log(`📊 API call recorded. Count: ${apiCallTracker.callCount}/${API_CALL_LIMIT}`)
 }
 
+// ============================================
+// GEOCODING FUNCTIONS - Automatic lat/lng conversion
+// ============================================
+
+interface GeocodingCacheEntry {
+  lat: number
+  lng: number
+  timestamp: number
+}
+
+interface GeocodingCache {
+  [address: string]: GeocodingCacheEntry
+}
+
+let geocodingCache: GeocodingCache = {}
+const GEOCODING_CACHE_DURATION = 24 * 60 * 60 * 1000 // 24 hours
+
+// Get cached coordinates for an address
+function getCachedCoordinates(address: string): { lat: number; lng: number } | null {
+  const normalizedAddress = address.toLowerCase().trim()
+  const cached = geocodingCache[normalizedAddress]
+  
+  if (!cached) return null
+  
+  const now = Date.now()
+  if (now - cached.timestamp > GEOCODING_CACHE_DURATION) {
+    delete geocodingCache[normalizedAddress]
+    return null
+  }
+  
+  console.log(`🎯 Using cached coordinates for: ${address}`)
+  return { lat: cached.lat, lng: cached.lng }
+}
+
+// Cache coordinates for an address
+function setCachedCoordinates(address: string, lat: number, lng: number): void {
+  const normalizedAddress = address.toLowerCase().trim()
+  geocodingCache[normalizedAddress] = {
+    lat,
+    lng,
+    timestamp: Date.now()
+  }
+  console.log(`💾 Cached coordinates for: ${address} -> ${lat}, ${lng}`)
+}
+
+// Geocode an address using Google Maps Geocoding API
+export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number } | null> {
+  // Check cache first
+  const cached = getCachedCoordinates(address)
+  if (cached) return cached
+  
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  if (!apiKey) {
+    console.warn('⚠️ Google Maps API key not configured for geocoding')
+    return null
+  }
+  
+  try {
+    // Add Paraguay bias for better local results
+    const encodedAddress = encodeURIComponent(`${address}, Paraguay`)
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${apiKey}&region=py&language=es`
+    
+    console.log(`🗺️ Geocoding address: ${address}`)
+    
+    const response = await fetch(url)
+    const data = await response.json()
+    
+    if (data.status === 'OK' && data.results.length > 0) {
+      const location = data.results[0].geometry.location
+      const coordinates = {
+        lat: parseFloat(location.lat),
+        lng: parseFloat(location.lng)
+      }
+      
+      // Cache the result
+      setCachedCoordinates(address, coordinates.lat, coordinates.lng)
+      
+      console.log(`✅ Geocoded: ${address} -> ${coordinates.lat}, ${coordinates.lng}`)
+      return coordinates
+    } else {
+      console.warn(`❌ Geocoding failed for: ${address}. Status: ${data.status}`)
+      return null
+    }
+  } catch (error) {
+    console.error(`💥 Geocoding error for ${address}:`, error)
+    return null
+  }
+}
+
+// Batch geocode multiple addresses with rate limiting
+export async function batchGeocodeAddresses(addresses: string[]): Promise<Map<string, { lat: number; lng: number }>> {
+  const results = new Map<string, { lat: number; lng: number }>()
+  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+  
+  console.log(`🚀 Starting batch geocoding for ${addresses.length} addresses`)
+  
+  for (let i = 0; i < addresses.length; i++) {
+    const address = addresses[i]
+    
+    // Check if we already have coordinates
+    const cached = getCachedCoordinates(address)
+    if (cached) {
+      results.set(address, cached)
+      continue
+    }
+    
+    // Geocode the address
+    const coordinates = await geocodeAddress(address)
+    if (coordinates) {
+      results.set(address, coordinates)
+    }
+    
+    // Rate limiting: wait between requests to avoid quota issues
+    if (i < addresses.length - 1) {
+      await delay(100) // 100ms between requests
+    }
+  }
+  
+  console.log(`✅ Batch geocoding completed. Success: ${results.size}/${addresses.length}`)
+  return results
+}
+
 // Optimized delay function with faster backoff
 async function delayWithBackoff(attempt: number): Promise<void> {
   const baseDelay = 500 // Reduced to 500ms base
@@ -207,9 +329,20 @@ async function delayWithBackoff(attempt: number): Promise<void> {
   await new Promise(resolve => setTimeout(resolve, delay))
 }
 
-// Transform raw Google Sheets data to our Clinic interface
+// Transform raw Google Sheets data to our Clinic interface with automatic geocoding
 function transformSheetDataToClinic(data: any[], index: number, treatment: string): Clinic {
   const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad] = data
+
+  // Parse coordinates - support both manual and geocoded
+  let lat = 0
+  let lng = 0
+  
+  // Try to parse manual coordinates first
+  if (latitud && longitud) {
+    lat = Number.parseFloat(latitud)
+    lng = Number.parseFloat(longitud)
+    console.log(`📍 Manual coordinates for ${nombre_clinica}: ${lat}, ${lng}`)
+  }
 
   return {
     id: index + 1,
@@ -222,10 +355,65 @@ function transformSheetDataToClinic(data: any[], index: number, treatment: strin
     equipment: equipos ? equipos.split(",").map((eq: string) => eq.trim()) : [],
     city: ciudad || "",
     distance: "0 km", // Will be calculated based on user location
-    lat: Number.parseFloat(latitud) || 0,
-    lng: Number.parseFloat(longitud) || 0,
+    lat,
+    lng,
     treatment: treatment // Asignar el tratamiento
   }
+}
+
+// Enhanced version: Process clinics with automatic geocoding for missing coordinates
+export async function processClinicCoordinates(clinics: Clinic[]): Promise<Clinic[]> {
+  console.log(`🗺️ Processing coordinates for ${clinics.length} clinics...`)
+  
+  // Find clinics without coordinates
+  const clinicsNeedingGeocode = clinics.filter(clinic => 
+    clinic.address && (!clinic.lat || !clinic.lng || (clinic.lat === 0 && clinic.lng === 0))
+  )
+  
+  if (clinicsNeedingGeocode.length === 0) {
+    console.log(`✅ All clinics already have coordinates!`)
+    return clinics
+  }
+  
+  console.log(`🔍 Found ${clinicsNeedingGeocode.length} clinics needing geocoding:`)
+  clinicsNeedingGeocode.forEach(clinic => {
+    console.log(`   - ${clinic.name}: ${clinic.address}`)
+  })
+  
+  // Extract unique addresses for batch geocoding
+  const addressesToGeocode = [...new Set(
+    clinicsNeedingGeocode.map(clinic => clinic.address)
+  )]
+  
+  console.log(`🚀 Starting batch geocoding for ${addressesToGeocode.length} unique addresses...`)
+  
+  // Batch geocode all addresses
+  const geocodedCoordinates = await batchGeocodeAddresses(addressesToGeocode)
+  
+  // Update clinics with geocoded coordinates
+  const updatedClinics = clinics.map(clinic => {
+    if (clinic.address && (!clinic.lat || !clinic.lng || (clinic.lat === 0 && clinic.lng === 0))) {
+      const coordinates = geocodedCoordinates.get(clinic.address)
+      if (coordinates) {
+        console.log(`✅ Updated ${clinic.name}: ${coordinates.lat}, ${coordinates.lng}`)
+        return {
+          ...clinic,
+          lat: coordinates.lat,
+          lng: coordinates.lng
+        }
+      } else {
+        console.warn(`⚠️ Could not geocode: ${clinic.name} (${clinic.address})`)
+      }
+    }
+    return clinic
+  })
+  
+  const successfulGeocodes = updatedClinics.filter(clinic => clinic.lat && clinic.lng && !(clinic.lat === 0 && clinic.lng === 0)).length
+  const totalClinics = clinics.length
+  
+  console.log(`🎉 Geocoding complete! ${successfulGeocodes}/${totalClinics} clinics have coordinates`)
+  
+  return updatedClinics
 }
 
 // Group clinics by name and combine their treatments and equipment
@@ -449,10 +637,24 @@ export async function fetchClinicsFromSheets(
 
     console.log(`⚙️ Total clinics before grouping: ${allClinics.length}`)
     
-    // Group clinics to avoid duplicates
-    const groupedClinics = groupClinicsByName(allClinics)
-    console.log(`✅ Clinics after grouping: ${groupedClinics.length} (removed ${allClinics.length - groupedClinics.length} duplicates)`)
+    // STEP 1: Process automatic geocoding for clinics without coordinates
+    console.log(`🗺️ Starting geocoding process...`)
+    const clinicsWithCoordinates = await processClinicCoordinates(allClinics)
     
+    // STEP 2: Group clinics to avoid duplicates
+    const groupedClinics = groupClinicsByName(clinicsWithCoordinates)
+    console.log(`✅ Clinics after grouping: ${groupedClinics.length} (removed ${clinicsWithCoordinates.length - groupedClinics.length} duplicates)`)
+    
+    // STEP 3: Calculate distances if user location is provided
+    if (userLat && userLng) {
+      console.log(`📍 Calculating distances from user location: ${userLat}, ${userLng}`)
+      groupedClinics.forEach(clinic => {
+        if (clinic.lat && clinic.lng) {
+          const distance = calculateDistance(userLat, userLng, clinic.lat, clinic.lng)
+          clinic.distance = `${distance} km`
+        }
+      })
+    }
     // Reassign sequential IDs after grouping
     groupedClinics.forEach((clinic, index) => {
       clinic.id = index + 1

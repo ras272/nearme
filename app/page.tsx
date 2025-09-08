@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { Search, MapPin, Phone, Clock, Loader2, AlertCircle, MessageCircle, Eye } from "lucide-react"
+import { Search, MapPin, Phone, Clock, Loader2, AlertCircle, MessageCircle, Eye, Navigation, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -40,6 +40,8 @@ export default function ClinicFinder() {
   const [isInitialLoad, setIsInitialLoad] = useState(true) // Estado para la carga inicial
   const [error, setError] = useState<string | null>(null)
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
+  const [locationPermission, setLocationPermission] = useState<'pending' | 'granted' | 'denied' | 'unavailable'>('pending')
+  const [showLocationPrompt, setShowLocationPrompt] = useState(false)
   const [equipmentOptions, setEquipmentOptions] = useState<string[]>([])
   const [cityOptions, setCityOptions] = useState<string[]>([])
   const [treatmentOptions, setTreatmentOptions] = useState<string[]>(AVAILABLE_TREATMENTS)
@@ -54,50 +56,66 @@ export default function ClinicFinder() {
     const refreshParam = urlParams.get('refresh')
     setIsDeveloperMode(refreshParam === 'true')
     
-    loadClinics()
-    requestUserLocation()
+    // Start the complete loading flow
+    initializeApp()
   }, [])
 
-  // Reload clinics when treatment filter changes
-  useEffect(() => {
-    if (selectedTreatment) {
-      loadClinicsForTreatment(selectedTreatment)
-    }
-  }, [selectedTreatment])
-
-  const loadClinics = async () => {
+  const initializeApp = async () => {
     try {
       setIsLoading(true)
       setError(null)
-
-      const clinics = await fetchClinicsFromSheets(userLocation?.lat, userLocation?.lng)
-      console.log(`📊 Frontend received ${clinics.length} clinics`)
       
-      // Check for duplicates in frontend
-      const clinicNames = clinics.map(c => c.name)
-      const uniqueNames = new Set(clinicNames)
-      console.log(`🔍 Unique clinic names: ${uniqueNames.size}, Total clinics: ${clinics.length}`)
+      // Step 1: Load clinics first (fast)
+      console.log('🚀 Step 1: Loading clinics data...')
+      const initialClinics = await fetchClinicsFromSheets()
+      setAllClinics(initialClinics)
+      setFilteredClinics(initialClinics)
+      setEquipmentOptions(getUniqueEquipment(initialClinics))
+      setCityOptions(getUniqueCities(initialClinics))
+      setClinicNameOptions(getUniqueClinicNames(initialClinics))
+      setTreatmentOptions(getUniqueTreatments(initialClinics))
       
-      if (uniqueNames.size !== clinics.length) {
-        console.warn(`⚠️ 🔄 Duplicates detected in frontend! Some clinics appear multiple times`)
-        const duplicates = clinicNames.filter((name, index) => clinicNames.indexOf(name) !== index)
-        console.log(`Duplicate clinics:`, [...new Set(duplicates)])
-      }
+      // Step 2: Request user location (show after clinics load)
+      console.log('🚀 Step 2: Requesting user location...')
+      await requestUserLocationWithPrompt()
       
-      setAllClinics(clinics)
-      setFilteredClinics(clinics)
-
-      // Update filter options based on loaded data
-      setEquipmentOptions(getUniqueEquipment(clinics))
-      setCityOptions(getUniqueCities(clinics))
-      setClinicNameOptions(getUniqueClinicNames(clinics))
-      setTreatmentOptions(getUniqueTreatments(clinics))
     } catch (err) {
       setError("Error al cargar las clínicas desde Google Sheets. Verifica tu configuración.")
-      console.error("Error loading clinics:", err)
+      console.error("Error initializing app:", err)
     } finally {
       setIsLoading(false)
-      setIsInitialLoad(false) // La carga inicial ha terminado
+      setIsInitialLoad(false)
+    }
+  }
+
+  const requestUserLocationWithPrompt = async () => {
+    // Check if geolocation is available
+    if (!navigator.geolocation) {
+      setLocationPermission('unavailable')
+      return
+    }
+
+    // Show location prompt to user
+    setShowLocationPrompt(true)
+    
+    try {
+      const location = await getUserLocation()
+      setUserLocation(location)
+      setLocationPermission('granted')
+      setShowLocationPrompt(false)
+      
+      console.log('📍 Location granted, reloading clinics with distances...')
+      
+      // Reload clinics with distance calculation
+      const clinicsWithDistances = await fetchClinicsFromSheets(location.lat, location.lng)
+      setAllClinics(clinicsWithDistances)
+      setFilteredClinics(clinicsWithDistances)
+      
+    } catch (err) {
+      console.log("User location not available:", err)
+      setLocationPermission('denied')
+      setShowLocationPrompt(false)
+      // Continue without location - distances will show as "0 km"
     }
   }
 
@@ -124,20 +142,14 @@ export default function ClinicFinder() {
     }
   }
 
-  const requestUserLocation = async () => {
-    try {
-      const location = await getUserLocation()
-      setUserLocation(location)
-
-      // Reload clinics with user location for distance calculation
-      const clinics = await fetchClinicsFromSheets(location.lat, location.lng)
-      setAllClinics(clinics)
-      setFilteredClinics(clinics)
-    } catch (err) {
-      console.log("User location not available:", err)
-      // Continue without location - distances will show as "0 km"
+  // Reload clinics when treatment filter changes
+  useEffect(() => {
+    if (selectedTreatment) {
+      loadClinicsForTreatment(selectedTreatment)
     }
-  }
+  }, [selectedTreatment])
+
+
 
   const [showMapModal, setShowMapModal] = useState(false)
 
@@ -377,7 +389,7 @@ export default function ClinicFinder() {
                   Verifica la configuración de Google Sheets o agrega datos al spreadsheet
                 </p>
                 <Button 
-                  onClick={loadClinics}
+                  onClick={initializeApp}
                   variant="outline"
                   className="text-gray-700 border-gray-300 hover:bg-gray-50"
                 >
@@ -406,6 +418,66 @@ export default function ClinicFinder() {
       {/* Full Screen Loader para carga inicial */}
       {isInitialLoad && <FullScreenLoader />}
       
+      {/* Location Permission Prompt */}
+      {showLocationPrompt && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-md w-full p-6 shadow-xl">
+            <div className="text-center">
+              <div className="mx-auto mb-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                <Navigation className="w-8 h-8 text-blue-600" />
+              </div>
+              
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                📍 Encuentra clínicas cerca de ti
+              </h3>
+              
+              <p className="text-gray-600 mb-6">
+                Para mostrarte las clínicas más cercanas y calcular distancias, necesitamos acceso a tu ubicación.
+              </p>
+              
+              <div className="flex gap-3">
+                <Button 
+                  onClick={() => {
+                    setShowLocationPrompt(false)
+                    setLocationPermission('denied')
+                  }}
+                  variant="outline"
+                  className="flex-1"
+                >
+                  No permitir
+                </Button>
+                <Button 
+                  onClick={async () => {
+                    try {
+                      const location = await getUserLocation()
+                      setUserLocation(location)
+                      setLocationPermission('granted')
+                      setShowLocationPrompt(false)
+                      
+                      console.log('📍 Location granted, reloading clinics with distances...')
+                      // Reload clinics with distances
+                      const clinicsWithDistances = await fetchClinicsFromSheets(location.lat, location.lng)
+                      setAllClinics(clinicsWithDistances)
+                      setFilteredClinics(clinicsWithDistances)
+                    } catch (err) {
+                      setLocationPermission('denied')
+                      setShowLocationPrompt(false)
+                    }
+                  }}
+                  className="flex-1 bg-blue-600 hover:bg-blue-700"
+                >
+                  Permitir ubicación
+                </Button>
+              </div>
+              
+              <p className="text-xs text-gray-500 mt-4">
+                Tu ubicación solo se usa para mostrar distancias. No se almacena.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <div className="min-h-screen bg-white">
       <header className="bg-white border-b border-gray-200 py-4 px-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto">
@@ -428,6 +500,20 @@ export default function ClinicFinder() {
             </div>
 
             <div className="flex items-center gap-2 text-sm text-gray-600">
+              {/* Location Status Indicator */}
+              {locationPermission === 'granted' && userLocation && (
+                <div className="flex items-center gap-1 text-green-600">
+                  <Navigation className="w-4 h-4" />
+                  <span className="hidden sm:inline text-xs">Ubicación activa</span>
+                </div>
+              )}
+              {locationPermission === 'denied' && (
+                <div className="flex items-center gap-1 text-gray-500">
+                  <X className="w-4 h-4" />
+                  <span className="hidden sm:inline text-xs">Sin ubicación</span>
+                </div>
+              )}
+              
               <MapPin className="w-4 h-4" />
               <span className="hidden sm:inline">Clínicas disponibles</span>
               <Badge variant="secondary" className="bg-gray-100 text-gray-700 border-gray-200">

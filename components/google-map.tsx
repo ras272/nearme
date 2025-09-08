@@ -26,6 +26,8 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const [userMarker, setUserMarker] = useState<any>(null)
   const [locationError, setLocationError] = useState<string | null>(null)
+  const [hasFittedBounds, setHasFittedBounds] = useState(false)
+  const [markersCreated, setMarkersCreated] = useState(false)
 
   // Load Google Maps API
   useEffect(() => {
@@ -79,6 +81,114 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
     getUserLocation(newMap)
   }, [isLoaded])
 
+  // Create beautiful clinic markers with modern design
+  const createClinicMarker = (clinic: any, index: number) => {
+    // Different colors for visual variety
+    const colors = [
+      { primary: '#059669', secondary: '#10b981', accent: '#6ee7b7' }, // Green
+      { primary: '#3b82f6', secondary: '#60a5fa', accent: '#93c5fd' }, // Blue  
+      { primary: '#8b5cf6', secondary: '#a78bfa', accent: '#c4b5fd' }, // Purple
+      { primary: '#ef4444', secondary: '#f87171', accent: '#fca5a5' }, // Red
+      { primary: '#f59e0b', secondary: '#fbbf24', accent: '#fde68a' }, // Orange
+    ]
+    
+    const colorScheme = colors[index % colors.length]
+    
+    // Enhanced modern marker with glow effect and animations
+    const markerSvg = `
+      <svg width="40" height="52" viewBox="0 0 40 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer glow -->
+        <defs>
+          <filter id="glow-${index}" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/> 
+            </feMerge>
+          </filter>
+          <linearGradient id="gradient-${index}" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:${colorScheme.secondary};stop-opacity:1" />
+            <stop offset="100%" style="stop-color:${colorScheme.primary};stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        
+        <!-- Shadow -->
+        <ellipse cx="20" cy="48" rx="12" ry="4" fill="black" opacity="0.2"/>
+        
+        <!-- Main pin body with gradient -->
+        <path d="M20 4C12.268 4 6 10.268 6 18C6 28 20 46 20 46S34 28 34 18C34 10.268 27.732 4 20 4Z" 
+              fill="url(#gradient-${index})" 
+              stroke="white" 
+              stroke-width="2"
+              filter="url(#glow-${index})"/>
+        
+        <!-- Medical cross icon -->
+        <g transform="translate(20, 18)">
+          <circle r="8" fill="white" opacity="0.95"/>
+          <path d="M-3 -1 H3 V1 H-3 Z M-1 -3 H1 V3 H-1 Z" fill="${colorScheme.primary}"/>
+        </g>
+        
+        <!-- Pulse ring animation -->
+        <circle cx="20" cy="18" r="8" fill="none" stroke="${colorScheme.accent}" stroke-width="2" opacity="0.6">
+          <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    `
+    
+    return {
+      url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(markerSvg),
+      scaledSize: new window.google.maps.Size(40, 52),
+      anchor: new window.google.maps.Point(20, 52),
+      labelOrigin: new window.google.maps.Point(20, 55)
+    }
+  }
+
+  // Create user location marker with premium design
+  const createUserLocationMarker = () => {
+    const userMarkerSvg = `
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="userGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+          </radialGradient>
+          <filter id="userGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/> 
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <!-- Outer pulse ring -->
+        <circle cx="16" cy="16" r="12" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.3">
+          <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Middle ring -->
+        <circle cx="16" cy="16" r="10" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5">
+          <animate attributeName="r" values="10;14;10" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Main circle -->
+        <circle cx="16" cy="16" r="8" fill="url(#userGradient)" 
+                stroke="white" stroke-width="3" filter="url(#userGlow)"/>
+        
+        <!-- Inner dot -->
+        <circle cx="16" cy="16" r="3" fill="white"/>
+      </svg>
+    `
+    
+    return {
+      url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(userMarkerSvg),
+      scaledSize: new window.google.maps.Size(32, 32),
+      anchor: new window.google.maps.Point(16, 16),
+    }
+  }
   // Get user location function
   const getUserLocation = (mapInstance?: any) => {
     if (navigator.geolocation) {
@@ -94,31 +204,51 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
           
           const currentMap = mapInstance || map
           if (currentMap) {
-            // Create user location marker
+            // Create user location marker with premium design
             const userLocationMarker = new window.google.maps.Marker({
               position: pos,
               map: currentMap,
               title: "Tu ubicación",
-              icon: {
-                url: "data:image/svg+xml;charset=UTF-8," +
-                  encodeURIComponent(`
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="12" cy="12" r="8" fill="#3b82f6" stroke="white" stroke-width="2"/>
-                      <circle cx="12" cy="12" r="3" fill="white"/>
-                      <circle cx="12" cy="12" r="10" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
-                    </svg>
-                  `),
-                scaledSize: new window.google.maps.Size(24, 24),
-                anchor: new window.google.maps.Point(12, 12),
-              },
+              icon: createUserLocationMarker(),
+              zIndex: 1000, // Higher z-index to appear above clinic markers
             })
             
-            // Create info window for user location
+            // Create stylized info window for user location
             const userInfoWindow = new window.google.maps.InfoWindow({
               content: `
-                <div style="padding: 10px; text-align: center;">
-                  <h3 style="margin: 0 0 8px 0; color: #3b82f6;">📍 Tu Ubicación</h3>
-                  <p style="margin: 0; font-size: 14px; color: #666;">Estás aquí</p>
+                <div style="
+                  padding: 16px; 
+                  text-align: center;
+                  border-radius: 12px;
+                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                  max-width: 280px;
+                ">
+                  <div style="
+                    width: 48px; 
+                    height: 48px; 
+                    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+                    border-radius: 50%;
+                    margin: 0 auto 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                  ">
+                    <span style="font-size: 20px;📍</span>
+                  </div>
+                  
+                  <h3 style="
+                    margin: 0 0 8px 0; 
+                    color: #1f2937;
+                    font-size: 18px;
+                    font-weight: 600;
+                  ">Tu Ubicación</h3>
+                  
+                  <p style="
+                    margin: 0;
+                    font-size: 14px;
+                    color: #6b7280;
+                  ">Usamos tu ubicación para calcular distancias a las clínicas</p>
                 </div>
               `,
             })
@@ -161,6 +291,9 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
   useEffect(() => {
     if (!map || !window.google) return
 
+    // Only create markers if they haven't been created yet or if clinics changed
+    if (markersCreated && markers.length > 0) return
+
     // Clear existing clinic markers (but keep user marker)
     markers.forEach((marker) => {
       if (marker !== userMarker) {
@@ -176,39 +309,168 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
           position: { lat: clinic.lat, lng: clinic.lng },
           map: map,
           title: clinic.name,
-          icon: {
-            url:
-              "data:image/svg+xml;charset=UTF-8," +
-              encodeURIComponent(`
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="12" fill="#059669"/>
-              <path d="M16 8C13.79 8 12 9.79 12 12C12 15.5 16 22 16 22S20 15.5 20 12C20 9.79 18.21 8 16 8ZM16 14C15.45 14 15 13.55 15 13S15.45 12 16 12S17 12.45 17 13S16.55 14 16 14Z" fill="white"/>
-            </svg>
-          `),
-            scaledSize: new window.google.maps.Size(32, 32),
-            anchor: new window.google.maps.Point(16, 32),
-          },
+          icon: createClinicMarker(clinic, clinics.indexOf(clinic)),
+          zIndex: 100, // Lower than user marker
+          // Add animation only on first creation
+          animation: !markersCreated ? window.google.maps.Animation.DROP : null,
         })
 
-        // Create info window
+        // Create modern, stylized info window
         const infoWindow = new window.google.maps.InfoWindow({
           content: `
-          <div style="max-width: 300px; padding: 8px;">
-            <h3 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600;">${clinic.name}</h3>
-            <div style="margin-bottom: 8px;">
-              ${clinic.equipment.map((eq) => `<span style="background: #f0f9ff; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-size: 12px; margin-right: 4px;">${eq}</span>`).join("")}
+          <div style="
+            max-width: 360px; 
+            padding: 20px;
+            border-radius: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+          ">
+            <div style="margin-bottom: 16px;">
+              <div style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 8px;
+              ">
+                <div style="
+                  width: 40px;
+                  height: 40px;
+                  background: linear-gradient(135deg, #059669, #10b981);
+                  border-radius: 12px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+                ">
+                  <span style="color: white; font-size: 18px; font-weight: bold;">+</span>
+                </div>
+                <div>
+                  <h3 style="
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #1f2937;
+                    line-height: 1.2;
+                  ">${clinic.name}</h3>
+                  <p style="
+                    margin: 0;
+                    font-size: 14px;
+                    color: #6b7280;
+                    font-weight: 500;
+                  ">${clinic.city}</p>
+                </div>
+              </div>
+              
+              ${userLocation ? `
+                <div style="
+                  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                ">
+                  <span style="font-size: 12px;">📍</span>
+                  <span style="
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: #1e40af;
+                  ">${clinic.distance} de distancia</span>
+                </div>
+              ` : ''}
             </div>
-            <p style="margin: 4px 0; font-size: 14px; color: #666;">📍 ${clinic.address}</p>
-            <p style="margin: 4px 0; font-size: 14px; color: #666;">📞 ${clinic.phone}</p>
-            <p style="margin: 4px 0; font-size: 14px; color: #666;">🕒 ${clinic.hours}</p>
-            ${userLocation ? `<p style="margin: 4px 0; font-size: 14px; color: #059669; font-weight: 600;">📍 ${clinic.distance}</p>` : ''}
-            <div style="margin-top: 8px;">
-              <button onclick="window.open('https://wa.me/${clinic.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hola! Encontré su clínica en la página de Ares Paraguay y me interesa obtener más información sobre tratamientos disponibles.\n\n¿Podrían brindarme más detalles sobre consultas y tratamientos?\n\n¡Gracias!`)}')" 
-                      style="background: #059669; color: white; border: none; padding: 6px 12px; border-radius: 4px; margin-right: 8px; cursor: pointer;">
+            
+            <div style="margin-bottom: 16px;">
+              <p style="
+                margin: 0 0 8px 0;
+                font-size: 12px;
+                font-weight: 600;
+                color: #374151;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+              ">Equipos Disponibles</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                ${clinic.equipment.slice(0, 4).map((eq) => `
+                  <span style="
+                    background: #f0fdf4;
+                    color: #166534;
+                    padding: 4px 8px;
+                    border-radius: 6px;
+                    font-size: 11px;
+                    font-weight: 500;
+                    border: 1px solid #bbf7d0;
+                  ">${eq}</span>
+                `).join('')}
+                ${clinic.equipment.length > 4 ? `
+                  <span style="
+                    background: #f9fafb;
+                    color: #6b7280;
+                    padding: 4px 8px;
+                    border-radius: 6px;
+                    font-size: 11px;
+                    font-weight: 500;
+                    border: 1px solid #e5e7eb;
+                  ">+${clinic.equipment.length - 4} más</span>
+                ` : ''}
+              </div>
+            </div>
+            
+            <div style="
+              background: #f8fafc;
+              padding: 12px;
+              border-radius: 12px;
+              margin-bottom: 16px;
+              border: 1px solid #e2e8f0;
+            ">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                <span style="font-size: 14px;">📍</span>
+                <span style="font-size: 13px; color: #475569;">${clinic.address}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                <span style="font-size: 14px;">📞</span>
+                <span style="font-size: 13px; color: #475569;">${clinic.phone}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 14px;">🕒</span>
+                <span style="font-size: 13px; color: #475569;">${clinic.hours}</span>
+              </div>
+            </div>
+            
+            <div style="display: flex; gap: 8px;">
+              <button onclick="window.open('https://wa.me/${clinic.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hola! Encontré su clínica en la página de Ares Paraguay y me interesa obtener más información sobre tratamientos disponibles.\n\n¿Podrían brindarme más detalles sobre consultas y tratamientos?\n\n¡Gracias!`)}')"
+                      style="
+                        background: linear-gradient(135deg, #059669, #10b981);
+                        color: white;
+                        border: none;
+                        padding: 12px 16px;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        flex: 1;
+                        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+                        transition: all 0.2s ease;
+                      "
+                      onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 6px 16px rgba(5, 150, 105, 0.4)'"
+                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(5, 150, 105, 0.3)'">
                 WhatsApp
               </button>
+              
               <button onclick="window.open('https://www.google.com/maps/dir/?api=1${userLocation ? `&origin=${userLocation.lat},${userLocation.lng}` : ''}&destination=${encodeURIComponent(clinic.address)}')"
-                      style="background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 6px 12px; border-radius: 4px; cursor: pointer;">
+                      style="
+                        background: #ffffff;
+                        color: #374151;
+                        border: 1px solid #d1d5db;
+                        padding: 12px 16px;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        flex: 1;
+                        transition: all 0.2s ease;
+                      "
+                      onmouseover="this.style.background='#f9fafb'; this.style.borderColor='#9ca3af'"
+                      onmouseout="this.style.background='#ffffff'; this.style.borderColor='#d1d5db'">
                 Cómo llegar
               </button>
             </div>
@@ -230,8 +492,8 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
     const allMarkers = userMarker ? [userMarker, ...newMarkers] : newMarkers
     setMarkers(allMarkers)
 
-    // Adjust map bounds to show all markers including user location
-    if (allMarkers.length > 0) {
+    // Adjust map bounds to show all markers including user location ONLY on initial load
+    if (allMarkers.length > 0 && !hasFittedBounds) {
       const bounds = new window.google.maps.LatLngBounds()
       allMarkers.forEach((marker) => {
         if (marker) bounds.extend(marker.getPosition())
@@ -243,6 +505,14 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
         if (map.getZoom() > 15) map.setZoom(15)
         window.google.maps.event.removeListener(listener)
       })
+      
+      // Mark that we've already fitted bounds so it doesn't happen again
+      setHasFittedBounds(true)
+    }
+
+    // Mark markers as created
+    if (!markersCreated) {
+      setMarkersCreated(true)
     }
   }, [map, clinics, onClinicSelect, userMarker, userLocation])
 
