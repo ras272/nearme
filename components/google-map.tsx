@@ -23,6 +23,9 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
   const [markers, setMarkers] = useState<any[]>([])
   const [isLoaded, setIsLoaded] = useState(false)
   const [selectedClinic, setSelectedClinic] = useState<Clinic | null>(null)
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
+  const [userMarker, setUserMarker] = useState<any>(null)
+  const [locationError, setLocationError] = useState<string | null>(null)
 
   // Load Google Maps API
   useEffect(() => {
@@ -71,14 +74,99 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
 
     const newMap = new window.google.maps.Map(mapRef.current, mapOptions)
     setMap(newMap)
+    
+    // Request user location when map is initialized
+    getUserLocation(newMap)
   }, [isLoaded])
+
+  // Get user location function
+  const getUserLocation = (mapInstance?: any) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }
+          
+          setUserLocation(pos)
+          setLocationError(null)
+          
+          const currentMap = mapInstance || map
+          if (currentMap) {
+            // Create user location marker
+            const userLocationMarker = new window.google.maps.Marker({
+              position: pos,
+              map: currentMap,
+              title: "Tu ubicación",
+              icon: {
+                url: "data:image/svg+xml;charset=UTF-8," +
+                  encodeURIComponent(`
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="8" fill="#3b82f6" stroke="white" stroke-width="2"/>
+                      <circle cx="12" cy="12" r="3" fill="white"/>
+                      <circle cx="12" cy="12" r="10" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                  `),
+                scaledSize: new window.google.maps.Size(24, 24),
+                anchor: new window.google.maps.Point(12, 12),
+              },
+            })
+            
+            // Create info window for user location
+            const userInfoWindow = new window.google.maps.InfoWindow({
+              content: `
+                <div style="padding: 10px; text-align: center;">
+                  <h3 style="margin: 0 0 8px 0; color: #3b82f6;">📍 Tu Ubicación</h3>
+                  <p style="margin: 0; font-size: 14px; color: #666;">Estás aquí</p>
+                </div>
+              `,
+            })
+            
+            userLocationMarker.addListener("click", () => {
+              userInfoWindow.open(currentMap, userLocationMarker)
+            })
+            
+            setUserMarker(userLocationMarker)
+          }
+        },
+        (error) => {
+          console.error("Error getting location:", error)
+          switch(error.code) {
+            case error.PERMISSION_DENIED:
+              setLocationError("Permisos de ubicación denegados")
+              break
+            case error.POSITION_UNAVAILABLE:
+              setLocationError("Ubicación no disponible")
+              break
+            case error.TIMEOUT:
+              setLocationError("Tiempo de espera agotado")
+              break
+            default:
+              setLocationError("Error desconocido obteniendo ubicación")
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 300000 // 5 minutes
+        }
+      )
+    } else {
+      setLocationError("Geolocalización no soportada en este navegador")
+    }
+  }
 
   // Add markers for clinics
   useEffect(() => {
     if (!map || !window.google) return
 
-    // Clear existing markers
-    markers.forEach((marker) => marker.setMap(null))
+    // Clear existing clinic markers (but keep user marker)
+    markers.forEach((marker) => {
+      if (marker !== userMarker) {
+        marker.setMap(null)
+      }
+    })
 
     const newMarkers = clinics
       .map((clinic) => {
@@ -113,12 +201,13 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
             <p style="margin: 4px 0; font-size: 14px; color: #666;">📍 ${clinic.address}</p>
             <p style="margin: 4px 0; font-size: 14px; color: #666;">📞 ${clinic.phone}</p>
             <p style="margin: 4px 0; font-size: 14px; color: #666;">🕒 ${clinic.hours}</p>
+            ${userLocation ? `<p style="margin: 4px 0; font-size: 14px; color: #059669; font-weight: 600;">📍 ${clinic.distance}</p>` : ''}
             <div style="margin-top: 8px;">
               <button onclick="window.open('https://wa.me/${clinic.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hola! Encontré su clínica en la página de Ares Paraguay y me interesa obtener más información sobre tratamientos disponibles.\n\n¿Podrían brindarme más detalles sobre consultas y tratamientos?\n\n¡Gracias!`)}')" 
                       style="background: #059669; color: white; border: none; padding: 6px 12px; border-radius: 4px; margin-right: 8px; cursor: pointer;">
                 WhatsApp
               </button>
-              <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(clinic.address)}')" 
+              <button onclick="window.open('https://www.google.com/maps/dir/?api=1${userLocation ? `&origin=${userLocation.lat},${userLocation.lng}` : ''}&destination=${encodeURIComponent(clinic.address)}')"
                       style="background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 6px 12px; border-radius: 4px; cursor: pointer;">
                 Cómo llegar
               </button>
@@ -137,17 +226,25 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
       })
       .filter(Boolean)
 
-    setMarkers(newMarkers)
+    // Keep user marker in the markers array if it exists
+    const allMarkers = userMarker ? [userMarker, ...newMarkers] : newMarkers
+    setMarkers(allMarkers)
 
-    // Adjust map bounds to show all markers
-    if (newMarkers.length > 0) {
+    // Adjust map bounds to show all markers including user location
+    if (allMarkers.length > 0) {
       const bounds = new window.google.maps.LatLngBounds()
-      newMarkers.forEach((marker) => {
+      allMarkers.forEach((marker) => {
         if (marker) bounds.extend(marker.getPosition())
       })
       map.fitBounds(bounds)
+      
+      // Set a reasonable zoom level if there are markers
+      const listener = window.google.maps.event.addListener(map, "idle", () => {
+        if (map.getZoom() > 15) map.setZoom(15)
+        window.google.maps.event.removeListener(listener)
+      })
     }
-  }, [map, clinics, onClinicSelect])
+  }, [map, clinics, onClinicSelect, userMarker, userLocation])
 
   if (!isLoaded) {
     return (
@@ -172,7 +269,19 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           <span>Mapa de Clínicas</span>
-          <Badge variant="secondary">{clinics.length} clínicas</Badge>
+          <div className="flex items-center gap-2">
+            {locationError && (
+              <Badge variant="destructive" className="text-xs">
+                {locationError}
+              </Badge>
+            )}
+            {userLocation && (
+              <Badge variant="default" className="text-xs bg-blue-600">
+                📍 Tu ubicación detectada
+              </Badge>
+            )}
+            <Badge variant="secondary">{clinics.length} clínicas</Badge>
+          </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="h-full p-0">
