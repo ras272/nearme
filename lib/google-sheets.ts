@@ -482,21 +482,81 @@ export async function fetchClinicsFromSheets(
   selectedTreatment?: string
 ): Promise<Clinic[]> {
   try {
-    // Check for developer mode (force refresh)
+    // Check for developer mode (force refresh from Google Sheets)
     const forceRefresh = typeof window !== 'undefined' && 
       new URLSearchParams(window.location.search).get('refresh') === 'true'
     
     if (forceRefresh) {
-      console.log('🛠️ Developer mode activated: refresh=true detected')
+      console.log('🛠️ Developer mode activated: refresh=true - fetching from Google Sheets')
+      return fetchClinicsFromSheetsAPI(userLat, userLng, selectedTreatment)
     }
     
-    // Check cache first (unless force refresh)
+    // Check cache first
     const cacheKey = getCacheKey(selectedTreatment, userLat, userLng)
-    const cachedData = getCachedData(cacheKey, forceRefresh)
+    const cachedData = getCachedData(cacheKey, false)
     if (cachedData) {
       return cachedData
     }
 
+    // ⚡ NEW: Load from static JSON file (super fast!)
+    console.log("⚡ Loading clinics from static JSON file...")
+    
+    try {
+      const response = await fetch('/data/clinics.json')
+      if (!response.ok) {
+        console.warn('⚠️ Static JSON not found, falling back to Google Sheets API')
+        return fetchClinicsFromSheetsAPI(userLat, userLng, selectedTreatment)
+      }
+      
+      const jsonData = await response.json()
+      console.log(`✅ Loaded ${jsonData.total_clinics} clinics from static JSON (generated: ${jsonData.generated_at})`)
+      
+      let clinics: Clinic[] = jsonData.clinics
+      
+      // Filter by treatment if specified
+      if (selectedTreatment && selectedTreatment !== "Todos los tratamientos") {
+        clinics = clinics.filter((clinic) => {
+          const treatments = clinic.treatment.split(", ")
+          return treatments.some(treatment => treatment.trim() === selectedTreatment)
+        })
+        console.log(`🔍 Filtered to ${clinics.length} clinics for treatment: ${selectedTreatment}`)
+      }
+      
+      // Calculate distances if user location is provided
+      if (userLat && userLng) {
+        console.log(`📍 Calculating distances from user location: ${userLat}, ${userLng}`)
+        clinics.forEach(clinic => {
+          if (clinic.lat && clinic.lng) {
+            const distance = calculateDistance(userLat, userLng, clinic.lat, clinic.lng)
+            clinic.distance = `${distance} km`
+          }
+        })
+      }
+      
+      // Cache the results
+      setCachedData(cacheKey, clinics)
+      
+      return clinics
+      
+    } catch (jsonError) {
+      console.error('💥 Error loading static JSON:', jsonError)
+      console.warn('⚠️ Falling back to Google Sheets API')
+      return fetchClinicsFromSheetsAPI(userLat, userLng, selectedTreatment)
+    }
+    
+  } catch (error) {
+    console.error("💥 Error fetching data:", error)
+    return []
+  }
+}
+
+// Original function to fetch from Google Sheets API (fallback or dev mode)
+async function fetchClinicsFromSheetsAPI(
+  userLat?: number, 
+  userLng?: number, 
+  selectedTreatment?: string
+): Promise<Clinic[]> {
+  try {
     // Check if required environment variables are set
     if (!GOOGLE_SHEETS_CONFIG.apiKey || !GOOGLE_SHEETS_CONFIG.spreadsheetId) {
       console.warn("⚠️ Google Sheets API key or Spreadsheet ID not configured")
@@ -504,10 +564,10 @@ export async function fetchClinicsFromSheets(
       console.warn("   NEXT_PUBLIC_GOOGLE_SHEETS_API_KEY=your_api_key")
       console.warn("   NEXT_PUBLIC_GOOGLE_SHEETS_ID=your_spreadsheet_id")
       console.error("❌ Cannot load clinics without proper API configuration")
-      return [] // Return empty array instead of mock data
+      return []
     }
 
-    console.log("📡 Fetching data from Google Sheets...")
+    console.log("📡 Fetching data from Google Sheets API...")
     console.log("🔗 Spreadsheet ID:", GOOGLE_SHEETS_CONFIG.spreadsheetId)
     console.log("🎯 Selected treatment:", selectedTreatment || "All treatments")
 
