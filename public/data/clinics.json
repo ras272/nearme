@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-10-10T15:34:37.685Z",
+  "generated_at": "2025-10-10T15:37:09.447Z",
   "total_clinics": 37,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -44,7 +44,7 @@
       "Rejuvenecimiento de piel",
       "Tratamientos faciales",
       "Lesiones pigmentarias",
-      "Lesiones Vasculares"
+      "Lesiones vasculares"
     ],
     "Forma LIGHT": [
       "Rejuvenecimiento de piel",
@@ -86,7 +86,7 @@
       "Rejuvenecimiento de Piel",
       "Tratamientos Faciales",
       "Lesiones pigmentarias",
-      "Lesiones Vasculares"
+      "Lesiones vasculares"
     ],
     "Primelase": [
       "Depilación",
@@ -115,12 +115,12 @@
       "Rejuvenecimiento de piel",
       "Tratamientos Faciales",
       "Lesiones pigmentarias",
-      "Lesiones Vasculares"
+      "Lesiones vasculares"
     ],
     "Trios": [
       "Rejuvenecimiento de piel",
       "Lesiones pigmentarias",
-      "Lesiones Vasculares"
+      "Lesiones vasculares"
     ],
     "Ultraformer III": [
       "Tratamientos faciales",
@@ -489,7 +489,7 @@
       "distance": "0 km",
       "lat": -25.2795736,
       "lng": -57.5793007,
-      "treatment": "Celulitis, Depilación, Lesiones Vasculares, Lesiones pigmentarias, Lesiones vasculares, Limpieza Facial, Reducción, Rejuvenecimiento de Piel, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos Faciales, Tratamientos faciales"
+      "treatment": "Celulitis, Depilación, Lesiones pigmentarias, Lesiones vasculares, Limpieza Facial, Reducción, Rejuvenecimiento de Piel, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos Faciales, Tratamientos faciales"
     },
     {
       "id": 18,
@@ -609,7 +609,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Lesiones Vasculares, Lesiones pigmentarias, Rejuvenecimiento de piel, Tratamientos faciales"
+      "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
       "id": 25,
@@ -785,7 +785,7 @@
       "distance": "0 km",
       "lat": -27.3101558,
       "lng": -55.857339,
-      "treatment": "Lesiones Vasculares, Lesiones pigmentarias, Rejuvenecimiento de piel, Tratamientos faciales"
+      "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
       "id": 35,
