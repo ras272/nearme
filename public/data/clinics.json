@@ -1,66 +1,66 @@
 {
-  "generated_at": "2025-10-10T13:46:56.661Z",
+  "generated_at": "2025-10-10T15:34:37.685Z",
   "total_clinics": 37,
   "equipment_treatment_map": {
     "Alquimia": [
-      "Limpieza Facial",
-      "Tratamientos Faciales"
+      "Limpieza facial",
+      "Tratamientos faciales"
     ],
     "Aquapure": [
-      "Limpieza Facial",
-      "Tratamientos Faciales"
+      "Limpieza facial",
+      "Tratamientos faciales"
     ],
     "CMSlim": [
-      "Tonificacion Muscular",
-      "Tratamientos Faciales",
-      "Reduccion",
+      "Tonificación muscular",
+      "Tratamientos faciales",
+      "Reducción",
       "Celulitis"
     ],
     "CO2RE": [
-      "Tratamientos Faciales",
-      "Rejuvenecimiento de Piel"
+      "Tratamientos faciales",
+      "Rejuvenecimiento de piel"
     ],
     "Cooltech": [
-      "Reduccion",
+      "Reducción",
       "Celulitis"
     ],
     "Crystal3D": [
       "Depilacion",
-      "Rejuvenecimiento de Piel"
+      "Rejuvenecimiento de piel"
     ],
     "Elysion": [
-      "Depilacion"
+      "Depilación"
     ],
     "Endymed": [
-      "Reduccion",
-      "Tension de Piel",
+      "Reducción",
+      "Tensado de piel",
       "Celulitis"
     ],
     "Enygma": [
-      "Incontinencia Urinaria",
-      "Zona Intima"
+      "Incontinencia urinaria",
+      "Zona intima"
     ],
     "Forma FULL": [
-      "Rejuvenecimiento de Piel",
-      "Tratamientos Faciales",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Rejuvenecimiento de piel",
+      "Tratamientos faciales",
+      "Lesiones pigmentarias",
+      "Lesiones Vasculares"
     ],
     "Forma LIGHT": [
-      "Rejuvenecimiento de Piel",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Rejuvenecimiento de piel",
+      "Lesiones pigmentarias",
+      "Lesiones vasculares"
     ],
     "Fotona 4D": [
-      "Tratamientos Faciales",
-      "Rejuvenecimiento de Piel",
-      "Lesiones Pigm"
+      "Tratamientos faciales",
+      "Rejuvenecimiento de piel",
+      "Lesiones pigmentarias"
     ],
     "Helios 785": [
-      "Tratamientos Faciales",
-      "Rejuvenecimiento de Piel",
+      "Tratamientos faciales",
+      "Rejuvenecimiento de piel",
       "Tatuajes",
-      "Lesiones Pigm"
+      "Lesiones pigmentarias"
     ],
     "Hipex": [
       "Incontinencia Urinaria",
@@ -76,102 +76,102 @@
       "Capilar"
     ],
     "Jovena": [
-      "Tension de Piel"
+      "Tensado de piel"
     ],
     "Lipodefine": [
-      "Tension de Piel",
-      "Reduccion"
+      "Tensado de piel",
+      "Reducción"
     ],
     "M22": [
       "Rejuvenecimiento de Piel",
       "Tratamientos Faciales",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Lesiones pigmentarias",
+      "Lesiones Vasculares"
     ],
     "Primelase": [
-      "Depilacion",
-      "Rejuvenecimiento de Piel"
+      "Depilación",
+      "Rejuvenecimiento de piel"
     ],
     "Quattro": [
-      "Depilacion"
+      "Depilación"
     ],
     "Reaction": [
-      "Tratamientos Faciales",
-      "Reduccion",
-      "Tension de Piel",
+      "Tratamientos faciales",
+      "Reducción",
+      "Tensado de piel",
       "Celulitis"
     ],
     "Silklase": [
-      "Tratamientos Faciales",
-      "Rejuvenecimiento de Piel",
-      "Lesiones Pigm"
+      "Tratamientos faciales",
+      "Rejuvenecimiento de piel",
+      "Lesiones pigmentarias"
     ],
     "SmartXide CO2": [
-      "Rejuvenecimiento de Piel",
-      "Lesiones Pigm",
+      "Rejuvenecimiento de piel",
+      "Lesiones pigmentarias",
       "Zona Intima"
     ],
     "Stellar M22": [
-      "Rejuvenecimiento de Piel",
+      "Rejuvenecimiento de piel",
       "Tratamientos Faciales",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Lesiones pigmentarias",
+      "Lesiones Vasculares"
     ],
     "Trios": [
-      "Rejuvenecimiento de Piel",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Rejuvenecimiento de piel",
+      "Lesiones pigmentarias",
+      "Lesiones Vasculares"
     ],
     "Ultraformer III": [
-      "Tratamientos Faciales",
-      "Tension de Piel",
-      "Reduccion",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Tratamientos faciales",
+      "Tensado de piel",
+      "Reducción",
+      "Lesiones pigmentarias",
+      "Lesiones vasculares"
     ],
     "Ultraformer MPT": [
-      "Tratamientos Faciales",
-      "Tension de Piel",
-      "Reduccion"
+      "Tratamientos faciales",
+      "Tensado de piel",
+      "Reducción"
     ],
     "Unyque": [
-      "Tension de Piel",
-      "Reduccion",
-      "Tratamientos Faciales",
+      "Tensado de piel",
+      "Reducción",
+      "Tratamientos faciales",
       "Celulitis"
     ],
     "V-Touch": [
-      "Tension de Piel",
+      "Tensado de piel",
       "Tratamientos Faciales"
     ],
     "V10": [
-      "Tension de Piel",
-      "Reduccion",
-      "Tratamientos Faciales",
+      "Tensado de piel",
+      "Reducción",
+      "Tratamientos faciales",
       "Celulitis"
     ],
     "VelaShape II": [
-      "Reduccion",
+      "Reducción",
       "Celulitis"
     ],
     "VelaShape III": [
-      "Reduccion",
+      "Reducción",
       "Celulitis"
     ],
     "Venus Legacy": [
-      "Reduccion",
-      "Tratamientos Faciales",
+      "Reducción",
+      "Tratamientos faciales",
       "Celulitis"
     ],
     "Venus Viva": [
       "Rejuvenecimiento de Piel",
       "Tratamientos Faciales",
-      "Lesiones Pigm",
-      "Lesiones Vasc"
+      "Lesiones pigmentarias",
+      "Lesiones vasculares"
     ],
     "Wakefit": [
-      "Tonificacion Muscular",
-      "Reduccion",
+      "Tonificación muscular",
+      "Reducción",
       "Celulitis"
     ]
   },
@@ -192,7 +192,7 @@
       "distance": "0 km",
       "lat": -25.279893,
       "lng": -57.57172,
-      "treatment": "Celulitis, Limpieza Facial, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Limpieza facial, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 2,
@@ -209,7 +209,7 @@
       "distance": "0 km",
       "lat": -25.3051543,
       "lng": -57.5720096,
-      "treatment": "Limpieza Facial, Tratamientos Faciales"
+      "treatment": "Limpieza facial, Tratamientos faciales"
     },
     {
       "id": 3,
@@ -226,7 +226,7 @@
       "distance": "0 km",
       "lat": -25.6154715,
       "lng": -56.2739764,
-      "treatment": "Limpieza Facial, Tratamientos Faciales"
+      "treatment": "Limpieza facial, Tratamientos faciales"
     },
     {
       "id": 4,
@@ -247,7 +247,7 @@
       "distance": "0 km",
       "lat": -25.2999142,
       "lng": -57.58303830000001,
-      "treatment": "Celulitis, Lesiones Pigm, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tatuajes, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Lesiones pigmentarias, Limpieza facial, Reducción, Rejuvenecimiento de piel, Tatuajes, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 5,
@@ -265,7 +265,7 @@
       "distance": "0 km",
       "lat": -25.3057986,
       "lng": -57.6193705,
-      "treatment": "Celulitis, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Limpieza facial, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 6,
@@ -283,7 +283,7 @@
       "distance": "0 km",
       "lat": -25.268755,
       "lng": -57.5627624,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 7,
@@ -300,7 +300,7 @@
       "distance": "0 km",
       "lat": -25.2689184,
       "lng": -57.56584909999999,
-      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 8,
@@ -317,7 +317,7 @@
       "distance": "0 km",
       "lat": -25.2846435,
       "lng": -57.5600655,
-      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 9,
@@ -334,7 +334,7 @@
       "distance": "0 km",
       "lat": -25.2551303,
       "lng": -57.5770648,
-      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 10,
@@ -352,7 +352,7 @@
       "distance": "0 km",
       "lat": -25.3108431,
       "lng": -57.59860579999999,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 11,
@@ -370,7 +370,7 @@
       "distance": "0 km",
       "lat": -25.3095164,
       "lng": -57.5882064,
-      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 12,
@@ -389,7 +389,7 @@
       "distance": "0 km",
       "lat": -25.3932143,
       "lng": -57.35953829999999,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 13,
@@ -408,7 +408,7 @@
       "distance": "0 km",
       "lat": -24.9719693,
       "lng": -54.9206047,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 14,
@@ -428,7 +428,7 @@
       "distance": "0 km",
       "lat": -25.2984247,
       "lng": -57.5651092,
-      "treatment": "Celulitis, Depilacion, Limpieza Facial, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Depilación, Limpieza Facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos Faciales, Tratamientos faciales"
     },
     {
       "id": 15,
@@ -445,7 +445,7 @@
       "distance": "0 km",
       "lat": -25.3378094,
       "lng": -57.62214770000001,
-      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 16,
@@ -464,7 +464,7 @@
       "distance": "0 km",
       "lat": -25.2795638,
       "lng": -57.5695221,
-      "treatment": "Celulitis, Incontinencia Urinaria, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales, Zona Intima"
+      "treatment": "Celulitis, Incontinencia urinaria, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales, Zona intima"
     },
     {
       "id": 17,
@@ -489,7 +489,7 @@
       "distance": "0 km",
       "lat": -25.2795736,
       "lng": -57.5793007,
-      "treatment": "Celulitis, Depilacion, Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Depilación, Lesiones Vasculares, Lesiones pigmentarias, Lesiones vasculares, Limpieza Facial, Reducción, Rejuvenecimiento de Piel, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos Faciales, Tratamientos faciales"
     },
     {
       "id": 18,
@@ -507,7 +507,7 @@
       "distance": "0 km",
       "lat": -25.2591982,
       "lng": -57.5825871,
-      "treatment": "Depilacion"
+      "treatment": "Depilación"
     },
     {
       "id": 19,
@@ -524,7 +524,7 @@
       "distance": "0 km",
       "lat": -25.2902166,
       "lng": -57.5998801,
-      "treatment": "Celulitis, Reduccion"
+      "treatment": "Celulitis, Reducción"
     },
     {
       "id": 20,
@@ -541,7 +541,7 @@
       "distance": "0 km",
       "lat": -25.2901629,
       "lng": -57.57711579999999,
-      "treatment": "Depilacion"
+      "treatment": "Depilación"
     },
     {
       "id": 21,
@@ -558,7 +558,7 @@
       "distance": "0 km",
       "lat": -25.524881,
       "lng": -54.6211164,
-      "treatment": "Depilacion"
+      "treatment": "Depilación"
     },
     {
       "id": 22,
@@ -575,7 +575,7 @@
       "distance": "0 km",
       "lat": -25.2718579,
       "lng": -57.5765251,
-      "treatment": "Depilacion"
+      "treatment": "Depilación"
     },
     {
       "id": 23,
@@ -592,7 +592,7 @@
       "distance": "0 km",
       "lat": -25.2797468,
       "lng": -57.5666026,
-      "treatment": "Celulitis, Reduccion, Tension de Piel"
+      "treatment": "Celulitis, Reducción, Tensado de piel"
     },
     {
       "id": 24,
@@ -609,7 +609,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel, Tratamientos Faciales"
+      "treatment": "Lesiones Vasculares, Lesiones pigmentarias, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
       "id": 25,
@@ -626,7 +626,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel"
+      "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel"
     },
     {
       "id": 26,
@@ -646,7 +646,7 @@
       "distance": "0 km",
       "lat": -25.2855647,
       "lng": -57.5684493,
-      "treatment": "Celulitis, Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Limpieza Facial, Reducción, Tensado de piel, Tratamientos Faciales, Tratamientos faciales"
     },
     {
       "id": 27,
@@ -663,7 +663,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 28,
@@ -680,7 +680,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Reduccion, Tension de Piel"
+      "treatment": "Reducción, Tensado de piel"
     },
     {
       "id": 29,
@@ -697,7 +697,7 @@
       "distance": "0 km",
       "lat": -25.2934437,
       "lng": -57.5719873,
-      "treatment": "Depilacion, Rejuvenecimiento de Piel"
+      "treatment": "Depilación, Rejuvenecimiento de piel"
     },
     {
       "id": 30,
@@ -714,7 +714,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 31,
@@ -731,7 +731,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 32,
@@ -750,7 +750,7 @@
       "distance": "0 km",
       "lat": -25.289799,
       "lng": -57.58017339999999,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos Faciales, Tratamientos faciales"
     },
     {
       "id": 33,
@@ -767,7 +767,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Lesiones Pigm, Lesiones Vasc, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Lesiones pigmentarias, Lesiones vasculares, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 34,
@@ -785,7 +785,7 @@
       "distance": "0 km",
       "lat": -27.3101558,
       "lng": -55.857339,
-      "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel, Tratamientos Faciales"
+      "treatment": "Lesiones Vasculares, Lesiones pigmentarias, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
       "id": 35,
@@ -802,7 +802,7 @@
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 36,
@@ -819,7 +819,7 @@
       "distance": "0 km",
       "lat": -25.4302418,
       "lng": -55.2590707,
-      "treatment": "Reduccion, Tension de Piel, Tratamientos Faciales"
+      "treatment": "Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 37,
@@ -837,7 +837,7 @@
       "distance": "0 km",
       "lat": -25.2874802,
       "lng": -57.5786312,
-      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     }
   ]
 }
