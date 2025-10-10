@@ -47,20 +47,37 @@ npm install
 4. Crea una **API Key** en Credenciales
 5. (Opcional) Habilita **Google Maps JavaScript API** para el mapa
 
-### 3. Crear Google Sheet
+### 3. Crear Google Sheets (NUEVA ARQUITECTURA - 2 hojas)
 
-Crea un Google Sheet con esta estructura:
+El sistema requiere **2 hojas** en tu Google Spreadsheet:
+
+#### **Hoja "Clinicas"** - Todas las clínicas
 
 | A | B | C | D | E | F | G | H | I | J |
 |---|---|---|---|---|---|---|---|---|---|
 | nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad |
 
+**Ejemplo:**
+| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad |
+|----------------|-----------|----------|----------|--------|----------|---------|---------|----------|---------|
+| Benestar | Julio Correa 1591, Asunción | +595 21 123456 | +595 981 123456 | info@benestar.com | Lun-Vie: 8:00-18:00 | CMSlim, Endymed, Hydrafacial | -25.27 | -57.57 | Asuncion |
+
+#### **Hoja "TXS"** - Mapeo equipos → tratamientos
+
+| A (EQUIPO) | B (TRATAMIENTOS) |
+|------------|------------------|
+| CMSlim | Tonificacion Muscular, Tratamientos Faciales, Reduccion, Celulitis |
+| Hydrafacial | Limpieza Facial, Tratamientos Faciales |
+| Endymed | Tensado Facial, Tratamientos Faciales, Lineas de Expresion |
+
 **Importante:**
-- La hoja debe llamarse exactamente **"Clinicas"**
-- Los datos deben empezar en la **fila 2**
-- Separar múltiples equipos con **comas**
+- Crear **2 hojas** con los nombres exactos: **"Clinicas"** y **"TXS"**
+- Los datos deben empezar en la **fila 2** (fila 1 = headers)
+- En "Clinicas", separar múltiples equipos con **comas** (columna G)
+- En "TXS", separar múltiples tratamientos con **comas** (columna B)
 - Coordenadas en **formato decimal** (-25.2637, -57.5759)
 - Hacer el sheet **público** o compartido con "cualquier persona con el enlace puede ver"
+- **Los tratamientos se asignan automáticamente** según los equipos listados
 
 ### 4. Variables de Entorno
 

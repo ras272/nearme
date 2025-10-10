@@ -4,6 +4,23 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
+// Load environment variables from .env.local
+const envPath = path.join(process.cwd(), '.env.local')
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf-8')
+  envContent.split('\n').forEach(line => {
+    const match = line.match(/^([^=:#]+)=(.*)$/)
+    if (match) {
+      const key = match[1].trim()
+      const value = match[2].trim()
+      process.env[key] = value
+    }
+  })
+  console.log('✅ Loaded environment variables from .env.local\n')
+} else {
+  console.warn('⚠️ .env.local file not found\n')
+}
+
 // Same interfaces as in lib/google-sheets.ts
 interface Clinic {
   id: number
@@ -21,35 +38,23 @@ interface Clinic {
   treatment: string
 }
 
+// ============================================
+// NEW ARCHITECTURE: Simplified 2-sheet structure
+// ============================================
 // Configuration
 const GOOGLE_SHEETS_CONFIG = {
   apiKey: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_API_KEY || "",
   spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ID || "",
-  treatmentSheets: {
-    "Reduccion": "Reduccion!A2:K",
-    "Tensando_Body": "Tensando_Body!A2:K",
-    "Modelado": "Modelado!A2:K",
-    "Depilacion_Body": "Depilacion_Body!A2:K",
-    "Musculatura": "Musculatura!A2:K",
-    "Drenaje_Body": "Drenaje_Body!A2:K",
-    "TX_Piel": "TX_Piel!A2:K",
-    "Vasculares_Body": "Vasculares_Body!A2:K",
-    "Tatuajes": "Tatuajes!A2:K",
-    "Gineco": "Gineco!A2:K",
-    "Tensado_Facial": "Tensado_Facial!A2:K",
-    "Fotoenv": "Fotoenv!A2:K",
-    "Pigmentarias": "Pigmentarias!A2:K",
-    "Limpieza_Facial": "Limpieza_Facial!A2:K",
-    "Lineas_exp": "Lineas_exp!A2:K",
-    "Ojos": "Ojos!A2:K",
-    "Vasculares_Facial": "Vasculares_Facial!A2:K",
-    "Cic_Acne": "Cic_Acne!A2:K",
-    "Acne": "Acne!A2:K",
-    "Drenaje_Facial": "Drenaje_Facial!A2:K",
-    "Drug_Delivery": "Drug_Delivery!A2:K",
-    "Depilacion_Facial": "Depilacion_Facial!A2:K",
-    "Celulitis": "Celulitis!A2:K"
+  // Only 2 sheets: Clinicas (all clinics) + TXS (equipment → treatments mapping)
+  sheets: {
+    "Clinicas": "Clinicas!A2:J",
+    "TXS": "TXS!A2:B"
   }
+}
+
+// Equipment to Treatments mapping interface
+interface EquipmentTreatmentMap {
+  [equipment: string]: string[]  // e.g., "CMSlim" → ["Reduccion", "Modelado", "Celulitis"]
 }
 
 // Geocoding cache
@@ -58,6 +63,77 @@ interface GeocodingCache {
 }
 
 let geocodingCache: GeocodingCache = {}
+
+// ============================================
+// NEW FUNCTIONS: Equipment → Treatment Mapping
+// ============================================
+
+// Load equipment-to-treatment mapping from TXS sheet
+async function loadEquipmentToTreatmentMapping(): Promise<EquipmentTreatmentMap> {
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/TXS!A2:B?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
+  
+  console.log('📋 Loading equipment-treatment mapping from TXS sheet...')
+  
+  try {
+    const response = await fetch(url)
+    
+    if (!response.ok) {
+      console.error(`❌ Error fetching TXS sheet: ${response.status}`)
+      return {}
+    }
+    
+    const data = await response.json()
+    
+    if (!data.values || data.values.length === 0) {
+      console.warn('⚠️ TXS sheet is empty or not found')
+      return {}
+    }
+    
+    const mapping: EquipmentTreatmentMap = {}
+    
+    // Parse TXS format: [EQUIPO, "Tratamiento1, Tratamiento2, ..."]
+    data.values.forEach((row: any[]) => {
+      const [equipment, treatmentsStr] = row
+      if (equipment && treatmentsStr) {
+        const normalizedEquipment = equipment.trim()
+        mapping[normalizedEquipment] = treatmentsStr
+          .split(',')
+          .map((t: string) => t.trim())
+          .filter((t: string) => t.length > 0)
+        
+        console.log(`   ✓ ${normalizedEquipment} → [${mapping[normalizedEquipment].join(', ')}]`)
+      }
+    })
+    
+    console.log(`✅ Loaded mapping for ${Object.keys(mapping).length} equipment types\n`)
+    return mapping
+    
+  } catch (error) {
+    console.error('💥 Error loading TXS mapping:', error)
+    return {}
+  }
+}
+
+// Map equipment list to treatments using TXS mapping
+function mapEquipmentsToTreatments(
+  equipments: string[], 
+  mapping: EquipmentTreatmentMap
+): string[] {
+  const treatmentsSet = new Set<string>()
+  
+  equipments.forEach(equipment => {
+    const normalizedEquipment = equipment.trim()
+    const treatments = mapping[normalizedEquipment]
+    
+    if (treatments && treatments.length > 0) {
+      treatments.forEach(treatment => treatmentsSet.add(treatment))
+    } else {
+      console.warn(`⚠️ No treatments found for equipment: ${normalizedEquipment}`)
+    }
+  })
+  
+  return Array.from(treatmentsSet).sort()
+}
 
 // Geocode an address using Google Maps API
 async function geocodeAddress(address: string): Promise<{ lat: number; lng: number } | null> {
@@ -105,9 +181,21 @@ async function geocodeAddress(address: string): Promise<{ lat: number; lng: numb
   }
 }
 
-// Transform raw data to Clinic
-function transformSheetDataToClinic(data: any[], index: number, treatment: string): Clinic {
+// Transform raw data to Clinic (NEW VERSION - with equipment mapping)
+function transformSheetDataToClinic(
+  data: any[], 
+  index: number, 
+  equipmentTreatmentMap: EquipmentTreatmentMap
+): Clinic {
   const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad] = data
+
+  // Parse equipment list
+  const equipmentList = equipos 
+    ? equipos.split(",").map((eq: string) => eq.trim()).filter((eq: string) => eq.length > 0)
+    : []
+
+  // ✨ NEW: Map equipment → treatments dynamically using TXS
+  const treatments = mapEquipmentsToTreatments(equipmentList, equipmentTreatmentMap)
 
   let lat = 0
   let lng = 0
@@ -125,12 +213,12 @@ function transformSheetDataToClinic(data: any[], index: number, treatment: strin
     whatsapp: whatsapp || "",
     email: email || "",
     hours: horarios || "",
-    equipment: equipos ? equipos.split(",").map((eq: string) => eq.trim()) : [],
+    equipment: equipmentList,
     city: ciudad || "",
     distance: "0 km",
     lat,
     lng,
-    treatment: treatment
+    treatment: treatments.join(", ") // Treatments mapped dynamically from equipment
   }
 }
 
@@ -215,9 +303,9 @@ function groupClinicsByName(clinics: Clinic[]): Clinic[] {
   return result
 }
 
-// Main function
+// Main function - NEW ARCHITECTURE
 async function generateClinicsJSON() {
-  console.log('\n🚀 Starting clinic data generation from Google Sheets...\n')
+  console.log('\n🚀 Starting clinic data generation (NEW ARCHITECTURE)...\n')
   console.log('=' .repeat(60))
   
   try {
@@ -231,59 +319,83 @@ async function generateClinicsJSON() {
     }
 
     console.log('✅ Environment variables configured')
-    console.log(`📊 Spreadsheet ID: ${GOOGLE_SHEETS_CONFIG.spreadsheetId}`)
-    console.log(`📋 Total sheets to fetch: ${Object.keys(GOOGLE_SHEETS_CONFIG.treatmentSheets).length}\n`)
+    console.log(`📊 Spreadsheet ID: ${GOOGLE_SHEETS_CONFIG.spreadsheetId}\n`)
 
-    let clinicIdCounter = 1
-    const allClinics: Clinic[] = []
+    // ============================================
+    // STEP 1: Load TXS mapping (equipment → treatments)
+    // ============================================
+    console.log('📋 Loading equipment-treatment mapping from TXS...')
+    const equipmentTreatmentMap = await loadEquipmentToTreatmentMapping()
+    
+    if (Object.keys(equipmentTreatmentMap).length === 0) {
+      console.error('❌ No equipment-treatment mapping loaded from TXS sheet!')
+      console.error('⚠️ Clinics will have no treatments assigned')
+    } else {
+      console.log(`✅ Mapping loaded: ${Object.keys(equipmentTreatmentMap).length} equipment types\n`)
+    }
 
-    // Fetch data from all sheets
-    for (const [treatmentName, sheetRange] of Object.entries(GOOGLE_SHEETS_CONFIG.treatmentSheets)) {
-      try {
-        const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/${sheetRange}?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
-        
-        console.log(`📥 Fetching ${treatmentName}...`)
-        
-        const response = await fetch(url)
-        
-        if (!response.ok) {
-          console.error(`❌ Error fetching ${treatmentName}: ${response.status}`)
-          continue
-        }
+    // ============================================
+    // STEP 2: Read single "Clinicas" sheet
+    // ============================================
+    console.log('📥 Fetching Clinicas sheet...')
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/Clinicas!A2:J?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
+    
+    const response = await fetch(url)
+    
+    if (!response.ok) {
+      console.error(`❌ Error fetching Clinicas: ${response.status}`)
+      process.exit(1)
+    }
 
-        const data = await response.json()
-        
-        if (!data.values || data.values.length === 0) {
-          console.warn(`📭 No data in ${treatmentName}`)
-          continue
-        }
+    const data = await response.json()
+    
+    if (!data.values || data.values.length === 0) {
+      console.error('📭 No data in Clinicas sheet')
+      process.exit(1)
+    }
 
-        console.log(`✅ Found ${data.values.length} rows in ${treatmentName}`)
+    console.log(`✅ Found ${data.values.length} rows\n`)
 
-        const treatmentClinics = data.values.map((row: any[]) => 
-          transformSheetDataToClinic(row, clinicIdCounter++, treatmentName)
-        )
-
-        const validClinics = treatmentClinics.filter((clinic: Clinic) => clinic.name && clinic.address)
-        allClinics.push(...validClinics)
-        
-        console.log(`✅ Added ${validClinics.length} valid clinics from ${treatmentName}\n`)
-        
-        // Small delay to avoid rate limits
-        await new Promise(resolve => setTimeout(resolve, 100))
-        
-      } catch (error) {
-        console.error(`💥 Error processing ${treatmentName}:`, error)
+    // ============================================
+    // STEP 3: Transform clinics with dynamic treatment mapping
+    // ============================================
+    console.log('🔄 Transforming clinics with dynamic treatment mapping...')
+    const allClinics: Clinic[] = data.values.map((row: any[], index: number) => {
+      const clinic = transformSheetDataToClinic(row, index + 1, equipmentTreatmentMap)
+      
+      if (clinic.equipment.length > 0) {
+        console.log(`   📍 ${clinic.name}: ${clinic.equipment.join(', ')} → [${clinic.treatment}]`)
       }
+      
+      return clinic
+    })
+
+    // Validate clinics
+    const validClinics = allClinics.filter(clinic => clinic.name && clinic.address)
+    console.log(`\n✅ Valid clinics: ${validClinics.length}`)
+    
+    if (validClinics.length === 0) {
+      console.error('❌ No valid clinics found (must have name and address)')
+      console.error('🔍 Debugging first 3 clinics:')
+      allClinics.slice(0, 3).forEach((clinic, idx) => {
+        console.error(`   Clinic ${idx + 1}:`)
+        console.error(`      name: "${clinic.name}" (${clinic.name ? 'OK' : 'EMPTY'})`)
+        console.error(`      address: "${clinic.address}" (${clinic.address ? 'OK' : 'EMPTY'})`)
+      })
+      process.exit(1)
     }
 
     console.log('=' .repeat(60))
-    console.log(`\n📊 Total clinics fetched: ${allClinics.length}`)
+    console.log(`\n📊 Total clinics before processing: ${validClinics.length}`)
 
-    // Process coordinates
-    const clinicsWithCoordinates = await processClinicCoordinates(allClinics)
+    // ============================================
+    // STEP 4: Geocode missing coordinates
+    // ============================================
+    const clinicsWithCoordinates = await processClinicCoordinates(validClinics)
     
-    // Group and deduplicate
+    // ============================================
+    // STEP 5: Deduplicate by name + address
+    // ============================================
     const groupedClinics = groupClinicsByName(clinicsWithCoordinates)
     
     // Reassign IDs
@@ -291,10 +403,13 @@ async function generateClinicsJSON() {
       clinic.id = index + 1
     })
 
-    // Prepare output
+    // ============================================
+    // STEP 6: Generate JSON output
+    // ============================================
     const output = {
       generated_at: new Date().toISOString(),
       total_clinics: groupedClinics.length,
+      equipment_treatment_map: equipmentTreatmentMap, // Include mapping for reference
       clinics: groupedClinics
     }
 
@@ -312,10 +427,12 @@ async function generateClinicsJSON() {
     console.log('=' .repeat(60))
     console.log(`\n✅ SUCCESS! JSON file generated at: ${outputPath}`)
     console.log(`📊 Total clinics: ${groupedClinics.length}`)
+    console.log(`🔧 Equipment types mapped: ${Object.keys(equipmentTreatmentMap).length}`)
     console.log(`📅 Generated at: ${output.generated_at}`)
     console.log(`💾 File size: ${(fs.statSync(outputPath).size / 1024).toFixed(2)} KB\n`)
     console.log('🎉 Done! Your app will now load instantly from this static file.')
     console.log('💡 Run this script again whenever you update Google Sheets.\n')
+    console.log('📝 NEW ARCHITECTURE: Only 2 sheets required (Clinicas + TXS)\n')
     
   } catch (error) {
     console.error('\n💥 Fatal error:', error)

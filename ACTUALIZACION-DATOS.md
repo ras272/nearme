@@ -1,8 +1,11 @@
 # 📊 Guía de Actualización de Datos
 
-## ⚡ Nueva Arquitectura: JSON Estático
+## ⚡ Nueva Arquitectura: JSON Estático + Mapeo TXS
 
-La aplicación ahora carga los datos desde un archivo JSON estático pre-generado, lo que hace que la carga sea **instantánea** (de 10-15 segundos a <500ms).
+La aplicación ahora usa una arquitectura simplificada:
+- **Solo 2 hojas** de Google Sheets: `Clinicas` y `TXS`
+- Los tratamientos se asignan **automáticamente** según los equipos de cada clínica
+- Carga **instantánea** desde JSON estático (de 10-15 segundos a <500ms)
 
 ---
 
@@ -24,7 +27,9 @@ npm run update-data
 ```
 
 Este comando:
-- 🔍 Lee todas las 24 hojas de Google Sheets
+- 📋 Lee la hoja `TXS` (mapeo equipos → tratamientos)
+- 🏥 Lee la hoja `Clinicas` (todas las clínicas)
+- ✨ Asigna tratamientos automáticamente según los equipos
 - 🗺️ Geocodifica direcciones sin coordenadas
 - 🔄 Deduplica clínicas repetidas
 - 💾 Guarda todo en `/public/data/clinics.json`
@@ -41,12 +46,33 @@ npm run build
 
 ---
 
+## 📋 Estructura de Google Sheets (NUEVA)
+
+### **Hoja "Clinicas"** (columnas A-J)
+| A | B | C | D | E | F | G | H | I | J |
+|---|---|---|---|---|---|---|---|---|---|
+| nombre_clinica | direccion | telefono | whatsapp | email | horarios | **equipos** | latitud | longitud | ciudad |
+
+**Importante:**
+- La columna **G (equipos)** debe contener los equipos separados por comas
+- Ejemplo: `CMSlim, Hydrafacial, Endymed`
+- Los tratamientos se asignan automáticamente según TXS
+
+### **Hoja "TXS"** (mapeo equipos → tratamientos)
+| A (EQUIPO) | B (TRATAMIENTOS) |
+|------------|------------------|
+| CMSlim | Tonificacion Muscular, Tratamientos Faciales, Reduccion, Celulitis |
+| Hydrafacial | Limpieza Facial, Tratamientos Faciales |
+| Endymed | Tensado Facial, Tratamientos Faciales, Lineas de Expresion |
+
+---
+
 ## 📋 Cuándo Actualizar
 
 **Actualiza el JSON cuando:**
-- ✅ Agregues nuevas clínicas al Google Sheet
+- ✅ Agregues nuevas clínicas a la hoja "Clinicas"
 - ✅ Modifiques datos de clínicas existentes (dirección, teléfono, equipos, etc.)
-- ✅ Cambies tratamientos disponibles
+- ✅ Cambies el mapeo en la hoja "TXS" (agregar/modificar equipos o tratamientos)
 - ✅ Actualices coordenadas
 
 **NO necesitas actualizar si:**

@@ -62,36 +62,23 @@ export const AVAILABLE_TREATMENTS = [
   "Celulitis"
 ]
 
-// Configuration for Google Sheets API with multiple treatment sheets
+// ============================================
+// NEW ARCHITECTURE: Simplified 2-sheet structure
+// ============================================
+// Configuration for Google Sheets API with simplified structure
 const GOOGLE_SHEETS_CONFIG = {
   apiKey: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_API_KEY || "",
   spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ID || "",
-  // Multiple sheets for different treatments
-  treatmentSheets: {
-    "Reduccion": "Reduccion!A2:K",
-    "Tensando_Body": "Tensando_Body!A2:K",
-    "Modelado": "Modelado!A2:K",
-    "Depilacion_Body": "Depilacion_Body!A2:K",
-    "Musculatura": "Musculatura!A2:K",
-    "Drenaje_Body": "Drenaje_Body!A2:K",
-    "TX_Piel": "TX_Piel!A2:K",
-    "Vasculares_Body": "Vasculares_Body!A2:K",
-    "Tatuajes": "Tatuajes!A2:K",
-    "Gineco": "Gineco!A2:K",
-    "Tensado_Facial": "Tensado_Facial!A2:K",
-    "Fotoenv": "Fotoenv!A2:K",
-    "Pigmentarias": "Pigmentarias!A2:K",
-    "Limpieza_Facial": "Limpieza_Facial!A2:K",
-    "Lineas_exp": "Lineas_exp!A2:K",
-    "Ojos": "Ojos!A2:K",
-    "Vasculares_Facial": "Vasculares_Facial!A2:K",
-    "Cic_Acne": "Cic_Acne!A2:K",
-    "Acne": "Acne!A2:K",
-    "Drenaje_Facial": "Drenaje_Facial!A2:K",
-    "Drug_Delivery": "Drug_Delivery!A2:K",
-    "Depilacion_Facial": "Depilacion_Facial!A2:K",
-    "Celulitis": "Celulitis!A2:K"
+  // Only 2 sheets: Clinicas (all clinics) + TXS (equipment → treatments mapping)
+  sheets: {
+    "Clinicas": "Clinicas!A2:J",  // All clinics in one sheet
+    "TXS": "TXS!A2:B"              // Equipment to treatments mapping
   }
+}
+
+// Equipment to Treatments mapping interface
+export interface EquipmentTreatmentMap {
+  [equipment: string]: string[]  // e.g., "CMSlim" → ["Reduccion", "Modelado", "Celulitis"]
 }
 
 // Helper function to convert treatment names for display (with spaces)
@@ -329,9 +316,92 @@ async function delayWithBackoff(attempt: number): Promise<void> {
   await new Promise(resolve => setTimeout(resolve, delay))
 }
 
-// Transform raw Google Sheets data to our Clinic interface with automatic geocoding
-function transformSheetDataToClinic(data: any[], index: number, treatment: string): Clinic {
+// ============================================
+// NEW FUNCTIONS: Equipment → Treatment Mapping
+// ============================================
+
+// Load equipment-to-treatment mapping from TXS sheet
+async function loadEquipmentToTreatmentMapping(): Promise<EquipmentTreatmentMap> {
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/TXS!A2:B?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
+  
+  console.log('📋 Loading equipment-treatment mapping from TXS sheet...')
+  
+  try {
+    const response = await fetch(url)
+    
+    if (!response.ok) {
+      console.error(`❌ Error fetching TXS sheet: ${response.status}`)
+      return {}
+    }
+    
+    const data = await response.json()
+    
+    if (!data.values || data.values.length === 0) {
+      console.warn('⚠️ TXS sheet is empty or not found')
+      return {}
+    }
+    
+    const mapping: EquipmentTreatmentMap = {}
+    
+    // Parse TXS format: [EQUIPO, "Tratamiento1, Tratamiento2, ..."]
+    data.values.forEach((row: any[]) => {
+      const [equipment, treatmentsStr] = row
+      if (equipment && treatmentsStr) {
+        const normalizedEquipment = equipment.trim()
+        mapping[normalizedEquipment] = treatmentsStr
+          .split(',')
+          .map((t: string) => t.trim())
+          .filter((t: string) => t.length > 0)
+        
+        console.log(`   ✓ ${normalizedEquipment} → [${mapping[normalizedEquipment].join(', ')}]`)
+      }
+    })
+    
+    console.log(`✅ Loaded mapping for ${Object.keys(mapping).length} equipment types`)
+    return mapping
+    
+  } catch (error) {
+    console.error('💥 Error loading TXS mapping:', error)
+    return {}
+  }
+}
+
+// Map equipment list to treatments using TXS mapping
+function mapEquipmentsToTreatments(
+  equipments: string[], 
+  mapping: EquipmentTreatmentMap
+): string[] {
+  const treatmentsSet = new Set<string>()
+  
+  equipments.forEach(equipment => {
+    const normalizedEquipment = equipment.trim()
+    const treatments = mapping[normalizedEquipment]
+    
+    if (treatments && treatments.length > 0) {
+      treatments.forEach(treatment => treatmentsSet.add(treatment))
+    } else {
+      console.warn(`⚠️ No treatments found for equipment: ${normalizedEquipment}`)
+    }
+  })
+  
+  return Array.from(treatmentsSet).sort()
+}
+
+// Transform raw Google Sheets data to our Clinic interface (NEW VERSION - no treatment param)
+function transformSheetDataToClinic(
+  data: any[], 
+  index: number, 
+  equipmentTreatmentMap: EquipmentTreatmentMap
+): Clinic {
   const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad] = data
+
+  // Parse equipment list
+  const equipmentList = equipos 
+    ? equipos.split(",").map((eq: string) => eq.trim()).filter((eq: string) => eq.length > 0)
+    : []
+
+  // ✨ NEW: Map equipment → treatments dynamically using TXS
+  const treatments = mapEquipmentsToTreatments(equipmentList, equipmentTreatmentMap)
 
   // Parse coordinates - support both manual and geocoded
   let lat = 0
@@ -341,7 +411,6 @@ function transformSheetDataToClinic(data: any[], index: number, treatment: strin
   if (latitud && longitud) {
     lat = Number.parseFloat(latitud)
     lng = Number.parseFloat(longitud)
-    console.log(`📍 Manual coordinates for ${nombre_clinica}: ${lat}, ${lng}`)
   }
 
   return {
@@ -352,12 +421,12 @@ function transformSheetDataToClinic(data: any[], index: number, treatment: strin
     whatsapp: whatsapp || "",
     email: email || "",
     hours: horarios || "",
-    equipment: equipos ? equipos.split(",").map((eq: string) => eq.trim()) : [],
+    equipment: equipmentList,
     city: ciudad || "",
     distance: "0 km", // Will be calculated based on user location
     lat,
     lng,
-    treatment: treatment // Asignar el tratamiento
+    treatment: treatments.join(", ") // Treatments mapped dynamically from equipment
   }
 }
 
@@ -550,7 +619,7 @@ export async function fetchClinicsFromSheets(
   }
 }
 
-// Original function to fetch from Google Sheets API (fallback or dev mode)
+// Original function to fetch from Google Sheets API (fallback or dev mode) - NEW ARCHITECTURE
 async function fetchClinicsFromSheetsAPI(
   userLat?: number, 
   userLng?: number, 
@@ -567,168 +636,118 @@ async function fetchClinicsFromSheetsAPI(
       return []
     }
 
-    console.log("📡 Fetching data from Google Sheets API...")
+    console.log("📡 Fetching data from Google Sheets API (NEW ARCHITECTURE)...")
     console.log("🔗 Spreadsheet ID:", GOOGLE_SHEETS_CONFIG.spreadsheetId)
     console.log("🎯 Selected treatment:", selectedTreatment || "All treatments")
 
-    let clinicIdCounter = 1
+    // ============================================
+    // STEP 1: Load TXS mapping (equipment → treatments)
+    // ============================================
+    const equipmentTreatmentMap = await loadEquipmentToTreatmentMapping()
+    
+    if (Object.keys(equipmentTreatmentMap).length === 0) {
+      console.error("❌ No equipment-treatment mapping loaded from TXS sheet!")
+      console.warn("⚠️ Clinics will have no treatments assigned")
+    }
 
-    // Determine which sheets to fetch
-    const sheetsToFetch = selectedTreatment && selectedTreatment !== "Todos los tratamientos" 
-      ? { [selectedTreatment]: GOOGLE_SHEETS_CONFIG.treatmentSheets[selectedTreatment as keyof typeof GOOGLE_SHEETS_CONFIG.treatmentSheets] }
-      : GOOGLE_SHEETS_CONFIG.treatmentSheets
+    // ============================================
+    // STEP 2: Read single "Clinicas" sheet
+    // ============================================
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/Clinicas!A2:J?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
+    
+    console.log(`📋 Fetching all clinics from single "Clinicas" sheet...`)
+    
+    const response = await fetch(url)
+    
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error(`❌ Error fetching Clinicas sheet: ${response.status} - ${response.statusText}`)
+      console.error(`📄 Error details:`, errorText)
+      return []
+    }
 
-    // Fetch data from each treatment sheet with rate limiting and retry logic
-    const sheetPromises = Object.entries(sheetsToFetch).map(async ([treatmentName, sheetRange], index) => {
-      if (!sheetRange) return []
+    const data = await response.json()
+    
+    if (!data.values || data.values.length === 0) {
+      console.warn(`📭 No data found in Clinicas sheet`)
+      return []
+    }
 
-      // Add minimal staggered delay to prevent simultaneous API calls
-      const staggeredDelay = index * 50 // Further reduced to 50ms between each call
-      if (staggeredDelay > 0) {
-        console.log(`⏳ Staggering ${treatmentName} call by ${staggeredDelay}ms`)
-        await new Promise(resolve => setTimeout(resolve, staggeredDelay))
-      }
+    console.log(`✅ Found ${data.values.length} clinics in sheet`)
 
-      let attempt = 0
-      const maxRetries = 2 // Reduced retries to speed up
-
-      while (attempt < maxRetries) {
-        try {
-          // Always allow calls but track them
-          recordApiCall()
-
-          const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/${sheetRange}?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
-          
-          console.log(`📋 Fetching ${treatmentName} from range: ${sheetRange} (attempt ${attempt + 1})`)
-          
-          const response = await fetch(url)
-
-          if (response.status === 429) {
-            console.error(`⏰ Rate limit exceeded for ${treatmentName}. Will retry with backoff.`)
-            if (attempt < maxRetries - 1) {
-              await delayWithBackoff(attempt)
-              attempt++
-              continue
-            } else {
-              console.error(`💥 Max retries exceeded for ${treatmentName}. Skipping.`)
-              return []
-            }
-          }
-
-          if (!response.ok) {
-            const errorText = await response.text()
-            console.error(`❌ Error fetching ${treatmentName}: ${response.status} - ${response.statusText}`)
-            console.error(`📄 Error details:`, errorText)
-            
-            if (attempt < maxRetries - 1 && response.status !== 404) {
-              await delayWithBackoff(attempt)
-              attempt++
-              continue
-            }
-            return [] // Return empty array for this sheet after all retries
-          }
-
-          const data = await response.json()
-          
-          if (!data.values || data.values.length === 0) {
-            console.warn(`📭 No data found in ${treatmentName} sheet`)
-            return []
-          }
-
-          console.log(`✅ Found ${data.values.length} rows in ${treatmentName}`)
-
-          // Transform data for this treatment
-          const treatmentClinics = data.values.map((row: any[], rowIndex: number) => {
-            const clinic = transformSheetDataToClinic(row, clinicIdCounter++, treatmentName)
-            
-            // Calculate distance if user location is provided
-            if (userLat && userLng && clinic.lat && clinic.lng) {
-              const distance = calculateDistance(userLat, userLng, clinic.lat, clinic.lng)
-              clinic.distance = `${distance} km`
-            }
-
-            return clinic
-          })
-
-          // Filter valid clinics
-          const validClinics = treatmentClinics.filter((clinic: Clinic) => clinic.name && clinic.address)
-          console.log(`✅ Added ${validClinics.length} valid clinics from ${treatmentName}`)
-          
-          return validClinics
-          
-        } catch (sheetError) {
-          console.error(`💥 Error processing ${treatmentName} (attempt ${attempt + 1}):`, sheetError)
-          
-          if (attempt < maxRetries - 1) {
-            await delayWithBackoff(attempt)
-            attempt++
-            continue
-          }
-          
-          return [] // Return empty array for this sheet after all retries
-        }
-      }
+    // ============================================
+    // STEP 3: Transform clinics with dynamic treatment mapping
+    // ============================================
+    const allClinics: Clinic[] = data.values.map((row: any[], index: number) => {
+      const clinic = transformSheetDataToClinic(row, index + 1, equipmentTreatmentMap)
       
-      return [] // Fallback if all attempts failed
+      // Calculate distance if user location is provided
+      if (userLat && userLng && clinic.lat && clinic.lng) {
+        const distance = calculateDistance(userLat, userLng, clinic.lat, clinic.lng)
+        clinic.distance = `${distance} km`
+      }
+
+      return clinic
     })
 
-    // Wait for all sheets to load with staggered timing and retry logic
-    console.log(`🚀 Loading ${Object.keys(sheetsToFetch).length} sheets with optimized rate limiting...`)
-    const startTime = Date.now()
-    
-    const sheetResults = await Promise.all(sheetPromises)
-    
-    const loadTime = Date.now() - startTime
-    console.log(`⚡ All sheets processed in ${loadTime}ms with optimized rate limiting`)
-    
-    // Log results from each sheet for debugging
-    const successfulSheets = sheetResults.filter(result => result.length > 0).length
-    const failedSheets = Object.keys(sheetsToFetch).length - successfulSheets
-    console.log(`📈 Sheet results: ${successfulSheets} successful, ${failedSheets} failed/empty`)
-    
-    if (failedSheets > 0) {
-      console.warn(`⚠️ ${failedSheets} sheets returned no data. This may cause incomplete results.`)
-      const failedSheetNames = Object.keys(sheetsToFetch).filter((_, index) => sheetResults[index].length === 0)
-      console.warn(`📋 Failed sheets:`, failedSheetNames)
-    }
-    
-    // Flatten all results
-    const allClinics: Clinic[] = sheetResults.flat()
+    // Filter valid clinics (must have name and address)
+    const validClinics = allClinics.filter(clinic => clinic.name && clinic.address)
+    console.log(`✅ ${validClinics.length} valid clinics loaded`)
 
-    console.log(`⚙️ Total clinics before grouping: ${allClinics.length}`)
-    
-    // STEP 1: Process automatic geocoding for clinics without coordinates
+    // ============================================
+    // STEP 4: Geocode missing coordinates
+    // ============================================
     console.log(`🗺️ Starting geocoding process...`)
-    const clinicsWithCoordinates = await processClinicCoordinates(allClinics)
+    const clinicsWithCoordinates = await processClinicCoordinates(validClinics)
     
-    // STEP 2: Group clinics to avoid duplicates
+    // ============================================
+    // STEP 5: Deduplicate by name + address
+    // ============================================
     const groupedClinics = groupClinicsByName(clinicsWithCoordinates)
     console.log(`✅ Clinics after grouping: ${groupedClinics.length} (removed ${clinicsWithCoordinates.length - groupedClinics.length} duplicates)`)
     
-    // STEP 3: Calculate distances if user location is provided
+    // ============================================
+    // STEP 6: Filter by treatment if specified
+    // ============================================
+    let filteredClinics = groupedClinics
+    if (selectedTreatment && selectedTreatment !== "Todos los tratamientos") {
+      filteredClinics = groupedClinics.filter((clinic) => {
+        const clinicTreatments = clinic.treatment.split(", ")
+        return clinicTreatments.some(treatment => treatment.trim() === selectedTreatment)
+      })
+      console.log(`🔍 Filtered to ${filteredClinics.length} clinics for treatment: ${selectedTreatment}`)
+    }
+    
+    // ============================================
+    // STEP 7: Calculate distances (if user location available)
+    // ============================================
     if (userLat && userLng) {
       console.log(`📍 Calculating distances from user location: ${userLat}, ${userLng}`)
-      groupedClinics.forEach(clinic => {
+      filteredClinics.forEach(clinic => {
         if (clinic.lat && clinic.lng) {
           const distance = calculateDistance(userLat, userLng, clinic.lat, clinic.lng)
           clinic.distance = `${distance} km`
         }
       })
     }
-    // Reassign sequential IDs after grouping
-    groupedClinics.forEach((clinic, index) => {
+    
+    // Reassign sequential IDs
+    filteredClinics.forEach((clinic, index) => {
       clinic.id = index + 1
     })
     
     // Cache the results
-    setCachedData(cacheKey, groupedClinics)
+    const cacheKey = getCacheKey(selectedTreatment, userLat, userLng)
+    setCachedData(cacheKey, filteredClinics)
     
-    return groupedClinics
+    console.log(`🎉 Successfully loaded ${filteredClinics.length} clinics with NEW ARCHITECTURE`)
+    
+    return filteredClinics
     
   } catch (error) {
     console.error("💥 Error fetching data from Google Sheets:", error)
     console.error("❌ Unable to load clinic data. Please check your configuration.")
-    return [] // Return empty array instead of mock data
+    return []
   }
 }
 

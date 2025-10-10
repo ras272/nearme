@@ -1,11 +1,276 @@
 {
-  "generated_at": "2025-10-08T23:46:22.312Z",
-  "total_clinics": 40,
+  "generated_at": "2025-10-10T02:59:22.350Z",
+  "total_clinics": 36,
+  "equipment_treatment_map": {
+    "Alquimia": [
+      "Limpieza Facial",
+      "Tratamientos Faciales"
+    ],
+    "Aquapure": [
+      "Limpieza Facial",
+      "Tratamientos Faciales"
+    ],
+    "CMSlim": [
+      "Tonificacion Muscular",
+      "Tratamientos Faciales",
+      "Reduccion",
+      "Celulitis"
+    ],
+    "CO2RE": [
+      "Tratamientos Faciales",
+      "Rejuvenecimiento de Piel"
+    ],
+    "Cooltech": [
+      "Reduccion",
+      "Celulitis"
+    ],
+    "Crystal3D": [
+      "Depilacion",
+      "Rejuvenecimiento de Piel"
+    ],
+    "Elysion": [
+      "Depilacion"
+    ],
+    "Endymed": [
+      "Reduccion",
+      "Tension de Piel",
+      "Celulitis"
+    ],
+    "Enygma": [
+      "Incontinencia Urinaria",
+      "Zona Intima"
+    ],
+    "FORMA FULL": [
+      "Rejuvenecimiento de Piel",
+      "Tratamientos Faciales",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "FORMA LIGHT": [
+      "Rejuvenecimiento de Piel",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "Fotona 4D": [
+      "Tratamientos Faciales",
+      "Rejuvenecimiento de Piel",
+      "Lesiones Pigm"
+    ],
+    "Helios 785": [
+      "Tratamientos Faciales",
+      "Rejuvenecimiento de Piel",
+      "Tatuajes",
+      "Lesiones Pigm"
+    ],
+    "Hipex": [
+      "Incontinencia Urinaria",
+      "Zona Intima"
+    ],
+    "Hydrafacial": [
+      "Limpieza Facial",
+      "Tratamientos Faciales"
+    ],
+    "Intensif": [
+      "Cicatrices de Acne",
+      "Hiperhidrosis",
+      "Capilar"
+    ],
+    "Jovena": [
+      "Tension de Piel"
+    ],
+    "Lipodefine": [
+      "Tension de Piel",
+      "Reduccion"
+    ],
+    "M22": [
+      "Rejuvenecimiento de Piel",
+      "Tratamientos Faciales",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "Primelase": [
+      "Depilacion",
+      "Rejuvenecimiento de Piel"
+    ],
+    "Quattro": [
+      "Depilacion"
+    ],
+    "Reaction": [
+      "Tratamientos Faciales",
+      "Reduccion",
+      "Tension de Piel",
+      "Celulitis"
+    ],
+    "Silklase": [
+      "Tratamientos Faciales",
+      "Rejuvenecimiento de Piel",
+      "Lesiones Pigm"
+    ],
+    "SmartXide CO2": [
+      "Rejuvenecimiento de Piel",
+      "Lesiones Pigm",
+      "Zona Intima"
+    ],
+    "Stellar M22": [
+      "Rejuvenecimiento de Piel",
+      "Tratamientos Faciales",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "Trios": [
+      "Rejuvenecimiento de Piel",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "Ultraformer III": [
+      "Tratamientos Faciales",
+      "Tension de Piel",
+      "Reduccion",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "Ultraformer MPT": [
+      "Tratamientos Faciales",
+      "Tension de Piel",
+      "Reduccion"
+    ],
+    "Unyque": [
+      "Tension de Piel",
+      "Reduccion",
+      "Tratamientos Faciales",
+      "Celulitis"
+    ],
+    "V-Touch": [
+      "Tension de Piel",
+      "Tratamientos Faciales"
+    ],
+    "V10": [
+      "Tension de Piel",
+      "Reduccion",
+      "Tratamientos Faciales",
+      "Celulitis"
+    ],
+    "VelaShape II": [
+      "Reduccion",
+      "Celulitis"
+    ],
+    "VelaShape III": [
+      "Reduccion",
+      "Celulitis"
+    ],
+    "Venus Legacy": [
+      "Reduccion",
+      "Tratamientos Faciales",
+      "Celulitis"
+    ],
+    "Venus Viva": [
+      "Rejuvenecimiento de Piel",
+      "Tratamientos Faciales",
+      "Lesiones Pigm",
+      "Lesiones Vasc"
+    ],
+    "Wakefit": [
+      "Tonificacion Muscular",
+      "Reduccion",
+      "Celulitis"
+    ]
+  },
   "clinics": [
     {
       "id": 1,
-      "name": "BENESTAR",
-      "address": "Julio Correa 1591 esq, Asunción 001525",
+      "name": "Clinica Carmelitas",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Alquimia",
+        "CMSlim"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Limpieza Facial, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+    },
+    {
+      "id": 2,
+      "name": "Clinica IMA",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Aquapure"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Limpieza Facial, Tratamientos Faciales"
+    },
+    {
+      "id": 3,
+      "name": "Dermed",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Aquapure"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Limpieza Facial, Tratamientos Faciales"
+    },
+    {
+      "id": 4,
+      "name": "Plena Real Care",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Aquapure",
+        "Endymed",
+        "Helios 785",
+        "Reaction",
+        "Ultraformer MPT"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Lesiones Pigm, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tatuajes, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 5,
+      "name": "Riona",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Aquapure",
+        "Unyque"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 6,
+      "name": "Benestar",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -14,94 +279,67 @@
         "CMSlim",
         "Endymed"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.268755,
-      "lng": -57.5627624,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Tensado_Facial, Lineas_exp, Ojos, Cic_Acne, Drug_Delivery, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 2,
-      "name": "DEPYLESS",
-      "address": "Eusebio Lillo Robles 1109 Esquina, Asunción 1813",
+      "id": 7,
+      "name": "Clinica Bibolini",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Wakefit",
-        "Venus Legacy"
+        "CMSlim"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.2874802,
-      "lng": -57.5786312,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 3,
-      "name": "BIBOLINI",
-      "address": "Sargento Benitez 1580 casi, Asunción 0000\n",
+      "id": 8,
+      "name": "Clinica Liv",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim",
-        "Endymed",
-        "Hydrafacial",
-        "Aquapure"
+        "CMSlim"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.2689184,
-      "lng": -57.56584909999999,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Drenaje_Body, TX_Piel, Fotoenv, Limpieza_Facial, Lineas_exp, Ojos, Drenaje_Facial, Drug_Delivery, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 4,
-      "name": "CLINICA CARMELITAS",
-      "address": "San Benigno 999 esquina, Asunción 001527\n",
+      "id": 9,
+      "name": "Corppolive",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim",
-        "Reaction",
-        "Velashape II",
-        "V10",
-        "Alquimia"
+        "CMSlim"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.279893,
-      "lng": -57.57172,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, TX_Piel, Gineco, Tensado_Facial, Limpieza_Facial, Lineas_exp, Ojos, Cic_Acne, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 5,
-      "name": "CORPPOLIVE",
-      "address": "Santisimo Sacramento 3069, Asunción 001519",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "CMSlim",
-        "Reaction",
-        "Primelease"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2551303,
-      "lng": -57.5770648,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Gineco, Tensado_Facial, Fotoenv, Lineas_exp, Ojos, Depilacion_Facial, Celulitis"
-    },
-    {
-      "id": 6,
-      "name": "ESTETIKAF",
-      "address": "Edificio ABIBA, Alcorta 360 casi, Asunción 1609\n",
+      "id": 10,
+      "name": "Estetikaf",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -110,16 +348,53 @@
         "CMSlim",
         "Reaction"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.3108431,
-      "lng": -57.59860579999999,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Gineco, Tensado_Facial, Lineas_exp, Ojos, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 7,
-      "name": "JOAYHU",
-      "address": "Capitán Emeterio Miranda 302, Olegario Víctor Andrade Esquina, Asunción 1849",
+      "id": 11,
+      "name": "Galego ASU",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "CMSlim",
+        "Crystal 3D"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
+    },
+    {
+      "id": 12,
+      "name": "Galego ITA",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "CMSlim",
+        "Reaction",
+        "Unyque"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+    },
+    {
+      "id": 13,
+      "name": "Instituto Doria Cristina",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -127,19 +402,38 @@
       "equipment": [
         "CMSlim",
         "Endymed",
-        "Hydrafacial",
-        "Elysion"
+        "Ultraformer MPT"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.2984247,
-      "lng": -57.5651092,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Drenaje_Body, TX_Piel, Tensado_Facial, Fotoenv, Limpieza_Facial, Lineas_exp, Ojos, Cic_Acne, Drenaje_Facial, Drug_Delivery, Depilacion_Facial, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 8,
-      "name": "SILANA",
-      "address": "Av. Bruno Guggiari 438, Asunción 110707",
+      "id": 14,
+      "name": "Joayhu",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "CMSlim",
+        "Elysion",
+        "Endymed",
+        "Hydrafacial"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Depilacion, Limpieza Facial, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
+    },
+    {
+      "id": 15,
+      "name": "Silana",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -147,16 +441,16 @@
       "equipment": [
         "CMSlim"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.3378094,
-      "lng": -57.62214770000001,
-      "treatment": "Reduccion, Tensando_Body, Musculatura, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
-      "id": 9,
-      "name": "SOHAM",
-      "address": "Río Acaray 1080 casi, Asunción 001527",
+      "id": 16,
+      "name": "Soham",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -166,364 +460,127 @@
         "Endymed",
         "Enygma"
       ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2795638,
-      "lng": -57.5695221,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Gineco, Tensado_Facial, Lineas_exp, Ojos, Cic_Acne, Drug_Delivery, Celulitis"
-    },
-    {
-      "id": 10,
-      "name": "LIV CLINIC",
-      "address": "Sargento Villamayor 1590 esquina, Asunción 001525",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "CMSlim",
-        "Ultraformer III"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2846435,
-      "lng": -57.5600655,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Celulitis"
-    },
-    {
-      "id": 11,
-      "name": "INSTITUTO DORIA CRISTINA",
-      "address": "Mariscal Francisco Solano López, San Alberto 101801",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "CMSlim",
-        "Endymed",
-        "Ultraformer MPT",
-        "Ultraformer III"
-      ],
-      "city": "San Alberto",
-      "distance": "0 km",
-      "lat": -24.9719693,
-      "lng": -54.9206047,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Tensado_Facial, Lineas_exp, Ojos, Cic_Acne, Drug_Delivery, Celulitis"
-    },
-    {
-      "id": 12,
-      "name": "HARMONIE",
-      "address": "123",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
       "city": "",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Gineco, Lineas_exp, Ojos, Celulitis"
-    },
-    {
-      "id": 13,
-      "name": "QUEEN",
-      "address": "123",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Gineco, Tensado_Facial, Lineas_exp, Ojos, Celulitis"
-    },
-    {
-      "id": 14,
-      "name": "NASCENT",
-      "address": "123",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Gineco, Tensado_Facial, Lineas_exp, Ojos, Celulitis"
-    },
-    {
-      "id": 15,
-      "name": "PLENA",
-      "address": "Alberto De Sousa 5118, Asunción 001413",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction",
-        "Ultraformer MPT",
-        "Endymed",
-        "Aquapure",
-        "Helios 785"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2999142,
-      "lng": -57.58303830000001,
-      "treatment": "Reduccion, Tensando_Body, Modelado, TX_Piel, Tatuajes, Gineco, Tensado_Facial, Fotoenv, Pigmentarias, Limpieza_Facial, Lineas_exp, Ojos, Cic_Acne, Drug_Delivery, Celulitis"
-    },
-    {
-      "id": 16,
-      "name": "CLINICA RAQUEL NAZER",
-      "address": "123",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction",
-        "Jovena"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Gineco, Tensado_Facial, Lineas_exp, Ojos, Cic_Acne, Celulitis"
+      "treatment": "Celulitis, Incontinencia Urinaria, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales, Zona Intima"
     },
     {
       "id": 17,
-      "name": "SHIRLEY MANNEH",
-      "address": "123",
+      "name": "Younique",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Reaction"
+        "CMSlim",
+        "Hydrafacial",
+        "M22",
+        "Quattro",
+        "Stellar M22",
+        "Ultraformer lll",
+        "VelaShape lll",
+        "Venus Legacy",
+        "Venus Viva"
       ],
       "city": "",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Gineco, Tensado_Facial, Lineas_exp, Ojos, Celulitis"
+      "treatment": "Celulitis, Depilacion, Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 18,
-      "name": "DERMALASER",
-      "address": "Vasconcellos 1345, Asunción 001410",
+      "name": "Dermadue",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Ultraformer III",
-        "Velashape III",
-        "Hydrafacial"
+        "C02RE",
+        "Elysion"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.2855647,
-      "lng": -57.5684493,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Drenaje_Body, TX_Piel, Tensado_Facial, Fotoenv, Limpieza_Facial, Lineas_exp, Ojos, Drenaje_Facial, Drug_Delivery, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Depilacion"
     },
     {
       "id": 19,
-      "name": "REGINA COELI",
-      "address": "123",
+      "name": "American Center",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Ultraformer III"
+        "Cooltech"
       ],
       "city": "",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Tensado_Facial, Lineas_exp, Ojos"
+      "treatment": "Celulitis, Reduccion"
     },
     {
       "id": 20,
-      "name": "YOUNIQUE",
-      "address": "Augusto Roa Bastos, Asunción 001530",
+      "name": "Depilarte ASU",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Ultraformer III",
-        "Velashape III",
-        "Venus Legacy",
-        "CMSlim",
-        "M22",
-        "Stellar M22",
-        "Hydrafacial",
-        "Quattro"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2795736,
-      "lng": -57.5793007,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Depilacion_Body, Musculatura, Drenaje_Body, TX_Piel, Vasculares_Body, Tensado_Facial, Fotoenv, Pigmentarias, Limpieza_Facial, Lineas_exp, Ojos, Vasculares_Facial, Cic_Acne, Acne, Drenaje_Facial, Drug_Delivery, Depilacion_Facial, Celulitis"
-    },
-    {
-      "id": 21,
-      "name": "VLE CLINIC",
-      "address": "Juan Leon Mallorquín esq. M-ñor Wiessen, Encarnación",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Ultraformer MPT"
-      ],
-      "city": "Encarnacion",
-      "distance": "0 km",
-      "lat": -27.3351602,
-      "lng": -55.861389,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Tensado_Facial, Lineas_exp, Ojos"
-    },
-    {
-      "id": 22,
-      "name": "RIONA",
-      "address": "Juan Zorrilla De San Martin, Asunción 1260",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Unyque",
-        "Aquapure"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.3057986,
-      "lng": -57.6193705,
-      "treatment": "Reduccion, Tensando_Body, Modelado, TX_Piel, Gineco, Tensado_Facial, Limpieza_Facial, Lineas_exp, Ojos, Drug_Delivery, Celulitis"
-    },
-    {
-      "id": 23,
-      "name": "CLINICA IMA",
-      "address": "Dr. Eduardo L. Moreira esquina, Asunción 001413\n",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Velashape II",
-        "Aquapure"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.3051543,
-      "lng": -57.5720096,
-      "treatment": "Reduccion, Tensando_Body, Modelado, TX_Piel, Tensado_Facial, Limpieza_Facial, Lineas_exp, Ojos, Drug_Delivery, Celulitis"
-    },
-    {
-      "id": 24,
-      "name": "CENTRO LEGRAND",
-      "address": "Molas Lopez 1232, Asunción 001520\n",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Velashape III",
-        "Primelease"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2645259,
-      "lng": -57.5774885,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Fotoenv, Depilacion_Facial, Celulitis"
-    },
-    {
-      "id": 25,
-      "name": "JESSICA ARCE",
-      "address": "123",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Lipodefine"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Reduccion, Modelado"
-    },
-    {
-      "id": 26,
-      "name": "GALEGO",
-      "address": "Ing. Albino Mernes 5184 esq, Asunción 001421",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "CMSlim",
-        "Unyque",
-        "Reaction"
+        "Elysion"
       ],
       "city": "",
       "distance": "0 km",
-      "lat": -25.3095164,
-      "lng": -57.5882064,
-      "treatment": "Reduccion, Tensando_Body, Modelado, Musculatura, Gineco, Tensado_Facial, Lineas_exp, Ojos, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Depilacion"
     },
     {
-      "id": 27,
-      "name": "DERMADUE",
-      "address": "Dr. Felipe Molas Lopez 2250 e/ Ingeniero John Whytehead y granada",
+      "id": 21,
+      "name": "Depilarte CDE",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "M22",
-        "Hydrafacial",
         "Elysion"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.2591982,
-      "lng": -57.5825871,
-      "treatment": "Tensando_Body, Depilacion_Body, Drenaje_Body, TX_Piel, Vasculares_Body, Tensado_Facial, Fotoenv, Pigmentarias, Limpieza_Facial, Lineas_exp, Ojos, Vasculares_Facial, Cic_Acne, Acne, Drenaje_Facial, Drug_Delivery, Depilacion_Facial"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Depilacion"
     },
     {
-      "id": 28,
-      "name": "CLINICA CALVO",
-      "address": "Asunción 001411",
+      "id": 22,
+      "name": "Lovtus",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Reaction"
+        "Elysion"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
-      "lat": -25.289799,
-      "lng": -57.58017339999999,
-      "treatment": "Tensando_Body, Modelado, Gineco, Tensado_Facial, Lineas_exp, Ojos, Celulitis"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Depilacion"
     },
     {
-      "id": 29,
-      "name": "ELAN",
-      "address": "123",
+      "id": 23,
+      "name": "Laura Sanchez",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -531,198 +588,238 @@
       "equipment": [
         "Endymed"
       ],
-      "city": "Asuncion",
+      "city": "",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Modelado, Tensado_Facial, Lineas_exp, Ojos, Cic_Acne, Drug_Delivery, Celulitis"
+      "treatment": "Celulitis, Reduccion, Tension de Piel"
+    },
+    {
+      "id": 24,
+      "name": "Jesus Garcia",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Formatk Full"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": ""
+    },
+    {
+      "id": 25,
+      "name": "Patricia Escauriza",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Formatk Light"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": ""
+    },
+    {
+      "id": 26,
+      "name": "Dermalaser",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Fotona",
+        "Hydrafacial",
+        "Ultraformer III",
+        "VSIII"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 27,
+      "name": "Harmonie",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 28,
+      "name": "Jessica Arce",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Lipodefine"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Reduccion, Tension de Piel"
+    },
+    {
+      "id": 29,
+      "name": "Moksha",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Primelase"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Depilacion, Rejuvenecimiento de Piel"
     },
     {
       "id": 30,
-      "name": "SILANA",
-      "address": "123",
+      "name": "Nascent",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim"
+        "Reaction"
       ],
       "city": "",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": "Modelado"
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
     },
     {
       "id": 31,
-      "name": "LALY CYMBALUK",
-      "address": "123",
+      "name": "Queen",
+      "address": "1",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Hydrafacial"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Drenaje_Body, TX_Piel, Fotoenv, Limpieza_Facial, Lineas_exp, Ojos, Drenaje_Facial, Drug_Delivery"
-    },
-    {
-      "id": 32,
-      "name": "DERMED",
-      "address": "Comandante Peralta esquina, Mauricio José Troche 2060",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Aquapure"
-      ],
-      "city": "Luque",
-      "distance": "0 km",
-      "lat": -25.6154715,
-      "lng": -56.2739764,
-      "treatment": "TX_Piel, Tensado_Facial, Limpieza_Facial, Lineas_exp, Ojos, Drug_Delivery"
-    },
-    {
-      "id": 33,
-      "name": "SANAT. LA TRINIDAD",
-      "address": "Avenida 248, Encarnación 6000\n",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "SILKLASE"
-      ],
-      "city": "Encarnacion",
-      "distance": "0 km",
-      "lat": -27.3101558,
-      "lng": -55.857339,
-      "treatment": "TX_Piel"
-    },
-    {
-      "id": 34,
-      "name": "AMERICAN CENTER",
-      "address": "Tte. Ricardo Cocco Riveros 1, Asunción\n",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Primelease"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2902166,
-      "lng": -57.5998801,
-      "treatment": "Fotoenv, Depilacion_Facial"
-    },
-    {
-      "id": 35,
-      "name": "DEPILARTE",
-      "address": "Senador Huey Pierce Long 566, Asunción 001411",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Elysion"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2901629,
-      "lng": -57.57711579999999,
-      "treatment": "Fotoenv, Depilacion_Facial"
-    },
-    {
-      "id": 36,
-      "name": "LOVTUS",
-      "address": "Heriberto Gómez de la Fuente 539, Asunción 001528\n",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Elysion"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2718579,
-      "lng": -57.5765251,
-      "treatment": "Fotoenv, Depilacion_Facial"
-    },
-    {
-      "id": 37,
-      "name": "MOKSHA",
-      "address": "Jose Ocampos Lanzoni 560 c, Asunción 1405",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Primelease"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2934437,
-      "lng": -57.5719873,
-      "treatment": "Fotoenv, Depilacion_Facial"
-    },
-    {
-      "id": 38,
-      "name": "GALEGO ASU",
-      "address": "Ing. Albino Mernes 5184 esq, Asunción 001421",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Crystal 3D"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.3095164,
-      "lng": -57.5882064,
-      "treatment": "Fotoenv"
-    },
-    {
-      "id": 39,
-      "name": "BE UP",
-      "address": "Mariscal Antonio Jose Sucre 2517, Asunción 001407",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Alquimia"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -25.2933537,
-      "lng": -57.56307049999999,
-      "treatment": "Limpieza_Facial"
-    },
-    {
-      "id": 40,
-      "name": "CLINICA GALEGO",
-      "address": "Ing. Albino Mernes 5184 esq, Asunción 001421",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Crystal 3D"
+        "Reaction"
       ],
       "city": "",
       "distance": "0 km",
-      "lat": -25.3095164,
-      "lng": -57.5882064,
-      "treatment": "Depilacion_Facial"
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 32,
+      "name": "Raquel Nazer",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction",
+        "Jovena",
+        "V-Touch"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 33,
+      "name": "Regina Coeli",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Ultraformer III"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Lesiones Pigm, Lesiones Vasc, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 34,
+      "name": "Sanatorio La Trinidad",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Silklase",
+        "Trios"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 35,
+      "name": "Shirley Manneh",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 36,
+      "name": "VLE Clinic",
+      "address": "1",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Ultraformer MPT"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Reduccion, Tension de Piel, Tratamientos Faciales"
     }
   ]
 }
