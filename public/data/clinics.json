@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-10-10T13:25:48.203Z",
+  "generated_at": "2025-10-10T13:46:56.661Z",
   "total_clinics": 37,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -181,7 +181,7 @@
       "name": "Clinica Carmelitas",
       "address": "San Benigno 999 esquina, Asunción 001527",
       "phone": "59521664424",
-      "whatsapp": "",
+      "whatsapp": "59521664424",
       "email": "",
       "hours": "",
       "equipment": [
@@ -199,7 +199,7 @@
       "name": "Clinica IMA",
       "address": "Dr. Eduardo L. Moreira esquina, Asunción 001413",
       "phone": "0986 960270",
-      "whatsapp": "",
+      "whatsapp": "0986 960270",
       "email": "",
       "hours": "",
       "equipment": [
@@ -216,7 +216,7 @@
       "name": "Dermed",
       "address": "Comandante Peralta esquina, Mauricio José Troche 2060",
       "phone": "0991 781 246",
-      "whatsapp": "",
+      "whatsapp": "0991 781 246",
       "email": "",
       "hours": "",
       "equipment": [
@@ -233,7 +233,7 @@
       "name": "Plena Real Care",
       "address": "Alberto De Sousa 5118, Asunción 001413\r\n",
       "phone": "0991 450101",
-      "whatsapp": "",
+      "whatsapp": "0991 450101",
       "email": "",
       "hours": "",
       "equipment": [
@@ -254,7 +254,7 @@
       "name": "Riona",
       "address": "Juan Zorrilla De San Martin, Asunción 1260",
       "phone": "595983499398",
-      "whatsapp": "",
+      "whatsapp": "595983499398",
       "email": "",
       "hours": "",
       "equipment": [
@@ -272,7 +272,7 @@
       "name": "Benestar",
       "address": "Julio Correa 1591 esq, Asunción 001525",
       "phone": "0971 762600",
-      "whatsapp": "",
+      "whatsapp": "0971 762600",
       "email": "",
       "hours": "",
       "equipment": [
@@ -290,7 +290,7 @@
       "name": "Clinica Bibolini",
       "address": "Sargento Benitez 1580 casi, Asunción 0000",
       "phone": "0981 202783",
-      "whatsapp": "",
+      "whatsapp": "0981 202783",
       "email": "",
       "hours": "",
       "equipment": [
@@ -307,7 +307,7 @@
       "name": "Clinica Liv",
       "address": "Sargento Villamayor 1590 esquina, Asunción 001525",
       "phone": "0972 505070",
-      "whatsapp": "",
+      "whatsapp": "0972 505070",
       "email": "",
       "hours": "",
       "equipment": [
@@ -324,7 +324,7 @@
       "name": "Corppolive",
       "address": "Santisimo Sacramento 3069, Asunción 001519\r\n",
       "phone": "0971 568547",
-      "whatsapp": "",
+      "whatsapp": "0971 568547",
       "email": "",
       "hours": "",
       "equipment": [
@@ -341,7 +341,7 @@
       "name": "Estetikaf",
       "address": "Edificio ABIBA, Alcorta 360 casi, Asunción 1609",
       "phone": "0983 555242",
-      "whatsapp": "",
+      "whatsapp": "0983 555242",
       "email": "",
       "hours": "",
       "equipment": [
@@ -359,7 +359,7 @@
       "name": "Galego ASU",
       "address": "Ing. Albino Mernes 5184 esq, Asunción 001421",
       "phone": "0982 168664",
-      "whatsapp": "",
+      "whatsapp": "0982 168664",
       "email": "",
       "hours": "",
       "equipment": [
@@ -377,7 +377,7 @@
       "name": "Galego ITA",
       "address": "115 de Agosto 218, Itauguá 110611",
       "phone": "0982 926284",
-      "whatsapp": "",
+      "whatsapp": "0982 926284",
       "email": "",
       "hours": "",
       "equipment": [
@@ -396,7 +396,7 @@
       "name": "Instituto Doria Cristina",
       "address": "Mariscal Francisco Solano López, San Alberto 101801",
       "phone": "0983 289985",
-      "whatsapp": "",
+      "whatsapp": "0983 289985",
       "email": "",
       "hours": "",
       "equipment": [
@@ -415,7 +415,7 @@
       "name": "Joayhu",
       "address": "Capitán Emeterio Miranda 302, Olegario Víctor Andrade Esquina, Asunción 1849",
       "phone": "0981 950738",
-      "whatsapp": "",
+      "whatsapp": "0981 950738",
       "email": "",
       "hours": "",
       "equipment": [
@@ -435,7 +435,7 @@
       "name": "Silana",
       "address": "Av. Bruno Guggiari 438, Asunción 110707",
       "phone": "59521333990",
-      "whatsapp": "",
+      "whatsapp": "59521333990",
       "email": "",
       "hours": "",
       "equipment": [
@@ -452,7 +452,7 @@
       "name": "Soham",
       "address": "Río Acaray 1080 casi, Asunción 001527",
       "phone": "0994 130456",
-      "whatsapp": "",
+      "whatsapp": "0994 130456",
       "email": "",
       "hours": "",
       "equipment": [
@@ -471,7 +471,7 @@
       "name": "Younique",
       "address": "Augusto Roa Bastos, Asunción 001530",
       "phone": "0984 900376",
-      "whatsapp": "",
+      "whatsapp": "0984 900376",
       "email": "",
       "hours": "",
       "equipment": [
@@ -496,7 +496,7 @@
       "name": "Dermadue",
       "address": "Dr. Felipe Molas Lopez 2250 e/ Ingeniero John Whytehead y granada, Asunción",
       "phone": "0981 183188",
-      "whatsapp": "",
+      "whatsapp": "0981 183188",
       "email": "",
       "hours": "",
       "equipment": [
@@ -514,7 +514,7 @@
       "name": "American Center",
       "address": "Tte. Ricardo Cocco Riveros 1, Asunción\r\n",
       "phone": "59521615442",
-      "whatsapp": "",
+      "whatsapp": "59521615442",
       "email": "",
       "hours": "",
       "equipment": [
@@ -531,7 +531,7 @@
       "name": "Depilarte ASU",
       "address": "Senador Huey Pierce Long 566, Asunción 001411",
       "phone": "0981 560959",
-      "whatsapp": "",
+      "whatsapp": "0981 560959",
       "email": "",
       "hours": "",
       "equipment": [
@@ -548,7 +548,7 @@
       "name": "Depilarte CDE",
       "address": "Eugenio A. Garay 24, Cd. del Este 100151",
       "phone": "0981 560959",
-      "whatsapp": "",
+      "whatsapp": "0981 560959",
       "email": "",
       "hours": "",
       "equipment": [
@@ -565,7 +565,7 @@
       "name": "Lovtus",
       "address": "Dúplex 2, Heriberto Gómez de la Fuente 539, Asunción 001528",
       "phone": "0971 330044",
-      "whatsapp": "",
+      "whatsapp": "0971 330044",
       "email": "",
       "hours": "",
       "equipment": [
@@ -633,7 +633,7 @@
       "name": "Dermalaser",
       "address": "Vasconcellos 1345, Asunción 001410",
       "phone": "0981 906090",
-      "whatsapp": "",
+      "whatsapp": "0981 906090",
       "email": "",
       "hours": "",
       "equipment": [
@@ -687,7 +687,7 @@
       "name": "Moksha",
       "address": "Jose Ocampos Lanzoni 560 c, Asunción 1405",
       "phone": "595991637040",
-      "whatsapp": "",
+      "whatsapp": "595991637040",
       "email": "",
       "hours": "",
       "equipment": [
@@ -738,7 +738,7 @@
       "name": "Clinica Raquel Nazer",
       "address": "Cassianoff 531, Asunción 001411",
       "phone": "982269618",
-      "whatsapp": "",
+      "whatsapp": "982269618",
       "email": "",
       "hours": "",
       "equipment": [
@@ -771,8 +771,8 @@
     },
     {
       "id": 34,
-      "name": "Avenida 248, Encarnación 6000",
-      "address": "!",
+      "name": "Sanatorio La Trinidad",
+      "address": "Avenida 248, Encarnación 6000",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -783,8 +783,8 @@
       ],
       "city": "Encarnacion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -27.3101558,
+      "lng": -55.857339,
       "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel, Tratamientos Faciales"
     },
     {
@@ -809,7 +809,7 @@
       "name": "VLE Clinic",
       "address": "Juan Leon Mallorquín esq. M-ñor Wiessen",
       "phone": "71208711",
-      "whatsapp": "",
+      "whatsapp": "71208711",
       "email": "",
       "hours": "",
       "equipment": [
@@ -817,8 +817,8 @@
       ],
       "city": "Encarnacion",
       "distance": "0 km",
-      "lat": -27.3364993,
-      "lng": -55.8612146,
+      "lat": -25.4302418,
+      "lng": -55.2590707,
       "treatment": "Reduccion, Tension de Piel, Tratamientos Faciales"
     },
     {
@@ -826,7 +826,7 @@
       "name": "Depyless",
       "address": "Eusebio Lillo Robles 1109 Esquina, Asunción 1813",
       "phone": "595981252511",
-      "whatsapp": "",
+      "whatsapp": "595981252511",
       "email": "",
       "hours": "",
       "equipment": [
