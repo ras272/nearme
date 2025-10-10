@@ -1,6 +1,6 @@
 {
-  "generated_at": "2025-10-10T02:59:22.350Z",
-  "total_clinics": 36,
+  "generated_at": "2025-10-10T13:25:48.203Z",
+  "total_clinics": 37,
   "equipment_treatment_map": {
     "Alquimia": [
       "Limpieza Facial",
@@ -40,13 +40,13 @@
       "Incontinencia Urinaria",
       "Zona Intima"
     ],
-    "FORMA FULL": [
+    "Forma FULL": [
       "Rejuvenecimiento de Piel",
       "Tratamientos Faciales",
       "Lesiones Pigm",
       "Lesiones Vasc"
     ],
-    "FORMA LIGHT": [
+    "Forma LIGHT": [
       "Rejuvenecimiento de Piel",
       "Lesiones Pigm",
       "Lesiones Vasc"
@@ -179,8 +179,8 @@
     {
       "id": 1,
       "name": "Clinica Carmelitas",
-      "address": "1",
-      "phone": "",
+      "address": "San Benigno 999 esquina, Asunción 001527",
+      "phone": "59521664424",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -188,51 +188,51 @@
         "Alquimia",
         "CMSlim"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.279893,
+      "lng": -57.57172,
       "treatment": "Celulitis, Limpieza Facial, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 2,
       "name": "Clinica IMA",
-      "address": "1",
-      "phone": "",
+      "address": "Dr. Eduardo L. Moreira esquina, Asunción 001413",
+      "phone": "0986 960270",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Aquapure"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3051543,
+      "lng": -57.5720096,
       "treatment": "Limpieza Facial, Tratamientos Faciales"
     },
     {
       "id": 3,
       "name": "Dermed",
-      "address": "1",
-      "phone": "",
+      "address": "Comandante Peralta esquina, Mauricio José Troche 2060",
+      "phone": "0991 781 246",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Aquapure"
       ],
-      "city": "",
+      "city": "Luque",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.6154715,
+      "lng": -56.2739764,
       "treatment": "Limpieza Facial, Tratamientos Faciales"
     },
     {
       "id": 4,
       "name": "Plena Real Care",
-      "address": "1",
-      "phone": "",
+      "address": "Alberto De Sousa 5118, Asunción 001413\r\n",
+      "phone": "0991 450101",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -243,17 +243,17 @@
         "Reaction",
         "Ultraformer MPT"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2999142,
+      "lng": -57.58303830000001,
       "treatment": "Celulitis, Lesiones Pigm, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tatuajes, Tension de Piel, Tratamientos Faciales"
     },
     {
       "id": 5,
       "name": "Riona",
-      "address": "1",
-      "phone": "",
+      "address": "Juan Zorrilla De San Martin, Asunción 1260",
+      "phone": "595983499398",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -261,17 +261,17 @@
         "Aquapure",
         "Unyque"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3057986,
+      "lng": -57.6193705,
       "treatment": "Celulitis, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
     },
     {
       "id": 6,
       "name": "Benestar",
-      "address": "1",
-      "phone": "",
+      "address": "Julio Correa 1591 esq, Asunción 001525",
+      "phone": "0971 762600",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -279,68 +279,68 @@
         "CMSlim",
         "Endymed"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.268755,
+      "lng": -57.5627624,
       "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 7,
       "name": "Clinica Bibolini",
-      "address": "1",
-      "phone": "",
+      "address": "Sargento Benitez 1580 casi, Asunción 0000",
+      "phone": "0981 202783",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "CMSlim"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2689184,
+      "lng": -57.56584909999999,
       "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 8,
       "name": "Clinica Liv",
-      "address": "1",
-      "phone": "",
+      "address": "Sargento Villamayor 1590 esquina, Asunción 001525",
+      "phone": "0972 505070",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "CMSlim"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2846435,
+      "lng": -57.5600655,
       "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 9,
       "name": "Corppolive",
-      "address": "1",
-      "phone": "",
+      "address": "Santisimo Sacramento 3069, Asunción 001519\r\n",
+      "phone": "0971 568547",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "CMSlim"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2551303,
+      "lng": -57.5770648,
       "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 10,
       "name": "Estetikaf",
-      "address": "1",
-      "phone": "",
+      "address": "Edificio ABIBA, Alcorta 360 casi, Asunción 1609",
+      "phone": "0983 555242",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -348,17 +348,17 @@
         "CMSlim",
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3108431,
+      "lng": -57.59860579999999,
       "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 11,
       "name": "Galego ASU",
-      "address": "1",
-      "phone": "",
+      "address": "Ing. Albino Mernes 5184 esq, Asunción 001421",
+      "phone": "0982 168664",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -366,17 +366,17 @@
         "CMSlim",
         "Crystal 3D"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3095164,
+      "lng": -57.5882064,
       "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 12,
       "name": "Galego ITA",
-      "address": "1",
-      "phone": "",
+      "address": "115 de Agosto 218, Itauguá 110611",
+      "phone": "0982 926284",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -385,17 +385,17 @@
         "Reaction",
         "Unyque"
       ],
-      "city": "",
+      "city": "Itaugua",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3932143,
+      "lng": -57.35953829999999,
       "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 13,
       "name": "Instituto Doria Cristina",
-      "address": "1",
-      "phone": "",
+      "address": "Mariscal Francisco Solano López, San Alberto 101801",
+      "phone": "0983 289985",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -404,17 +404,17 @@
         "Endymed",
         "Ultraformer MPT"
       ],
-      "city": "",
+      "city": "San Alberto",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -24.9719693,
+      "lng": -54.9206047,
       "treatment": "Celulitis, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 14,
       "name": "Joayhu",
-      "address": "1",
-      "phone": "",
+      "address": "Capitán Emeterio Miranda 302, Olegario Víctor Andrade Esquina, Asunción 1849",
+      "phone": "0981 950738",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -424,34 +424,34 @@
         "Endymed",
         "Hydrafacial"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2984247,
+      "lng": -57.5651092,
       "treatment": "Celulitis, Depilacion, Limpieza Facial, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 15,
       "name": "Silana",
-      "address": "1",
-      "phone": "",
+      "address": "Av. Bruno Guggiari 438, Asunción 110707",
+      "phone": "59521333990",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "CMSlim"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3378094,
+      "lng": -57.62214770000001,
       "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 16,
       "name": "Soham",
-      "address": "1",
-      "phone": "",
+      "address": "Río Acaray 1080 casi, Asunción 001527",
+      "phone": "0994 130456",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -460,17 +460,17 @@
         "Endymed",
         "Enygma"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2795638,
+      "lng": -57.5695221,
       "treatment": "Celulitis, Incontinencia Urinaria, Reduccion, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales, Zona Intima"
     },
     {
       "id": 17,
       "name": "Younique",
-      "address": "1",
-      "phone": "",
+      "address": "Augusto Roa Bastos, Asunción 001530",
+      "phone": "0984 900376",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -480,22 +480,22 @@
         "M22",
         "Quattro",
         "Stellar M22",
-        "Ultraformer lll",
-        "VelaShape lll",
+        "Ultraformer III",
+        "VelaShape III",
         "Venus Legacy",
         "Venus Viva"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Celulitis, Depilacion, Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tonificacion Muscular, Tratamientos Faciales"
+      "lat": -25.2795736,
+      "lng": -57.5793007,
+      "treatment": "Celulitis, Depilacion, Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Rejuvenecimiento de Piel, Tension de Piel, Tonificacion Muscular, Tratamientos Faciales"
     },
     {
       "id": 18,
       "name": "Dermadue",
-      "address": "1",
-      "phone": "",
+      "address": "Dr. Felipe Molas Lopez 2250 e/ Ingeniero John Whytehead y granada, Asunción",
+      "phone": "0981 183188",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -503,84 +503,84 @@
         "C02RE",
         "Elysion"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2591982,
+      "lng": -57.5825871,
       "treatment": "Depilacion"
     },
     {
       "id": 19,
       "name": "American Center",
-      "address": "1",
-      "phone": "",
+      "address": "Tte. Ricardo Cocco Riveros 1, Asunción\r\n",
+      "phone": "59521615442",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Cooltech"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2902166,
+      "lng": -57.5998801,
       "treatment": "Celulitis, Reduccion"
     },
     {
       "id": 20,
       "name": "Depilarte ASU",
-      "address": "1",
-      "phone": "",
+      "address": "Senador Huey Pierce Long 566, Asunción 001411",
+      "phone": "0981 560959",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Elysion"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2901629,
+      "lng": -57.57711579999999,
       "treatment": "Depilacion"
     },
     {
       "id": 21,
       "name": "Depilarte CDE",
-      "address": "1",
-      "phone": "",
+      "address": "Eugenio A. Garay 24, Cd. del Este 100151",
+      "phone": "0981 560959",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Elysion"
       ],
-      "city": "",
+      "city": "CDE",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.524881,
+      "lng": -54.6211164,
       "treatment": "Depilacion"
     },
     {
       "id": 22,
       "name": "Lovtus",
-      "address": "1",
-      "phone": "",
+      "address": "Dúplex 2, Heriberto Gómez de la Fuente 539, Asunción 001528",
+      "phone": "0971 330044",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Elysion"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2718579,
+      "lng": -57.5765251,
       "treatment": "Depilacion"
     },
     {
       "id": 23,
       "name": "Laura Sanchez",
-      "address": "1",
+      "address": "Dr. Cirilo Caceres Zorrilla, Asunción 001527",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -588,51 +588,51 @@
       "equipment": [
         "Endymed"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2797468,
+      "lng": -57.5666026,
       "treatment": "Celulitis, Reduccion, Tension de Piel"
     },
     {
       "id": 24,
       "name": "Jesus Garcia",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Formatk Full"
+        "Forma FULL"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": ""
+      "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel, Tratamientos Faciales"
     },
     {
       "id": 25,
       "name": "Patricia Escauriza",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
-        "Formatk Light"
+        "Forma LIGHT"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
-      "treatment": ""
+      "treatment": "Lesiones Pigm, Lesiones Vasc, Rejuvenecimiento de Piel"
     },
     {
       "id": 26,
       "name": "Dermalaser",
-      "address": "1",
-      "phone": "",
+      "address": "Vasconcellos 1345, Asunción 001410",
+      "phone": "0981 906090",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -640,18 +640,18 @@
         "Fotona",
         "Hydrafacial",
         "Ultraformer III",
-        "VSIII"
+        "VelaShape III"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
+      "lat": -25.2855647,
+      "lng": -57.5684493,
+      "treatment": "Celulitis, Lesiones Pigm, Lesiones Vasc, Limpieza Facial, Reduccion, Tension de Piel, Tratamientos Faciales"
     },
     {
       "id": 27,
       "name": "Harmonie",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -659,7 +659,7 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -668,7 +668,7 @@
     {
       "id": 28,
       "name": "Jessica Arce",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -676,7 +676,7 @@
       "equipment": [
         "Lipodefine"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -685,24 +685,24 @@
     {
       "id": 29,
       "name": "Moksha",
-      "address": "1",
-      "phone": "",
+      "address": "Jose Ocampos Lanzoni 560 c, Asunción 1405",
+      "phone": "595991637040",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Primelase"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2934437,
+      "lng": -57.5719873,
       "treatment": "Depilacion, Rejuvenecimiento de Piel"
     },
     {
       "id": 30,
       "name": "Nascent",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -710,7 +710,7 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -719,7 +719,7 @@
     {
       "id": 31,
       "name": "Queen",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -727,7 +727,7 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -735,9 +735,9 @@
     },
     {
       "id": 32,
-      "name": "Raquel Nazer",
-      "address": "1",
-      "phone": "",
+      "name": "Clinica Raquel Nazer",
+      "address": "Cassianoff 531, Asunción 001411",
+      "phone": "982269618",
       "whatsapp": "",
       "email": "",
       "hours": "",
@@ -746,16 +746,16 @@
         "Jovena",
         "V-Touch"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.289799,
+      "lng": -57.58017339999999,
       "treatment": "Celulitis, Reduccion, Tension de Piel, Tratamientos Faciales"
     },
     {
       "id": 33,
       "name": "Regina Coeli",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -763,7 +763,7 @@
       "equipment": [
         "Ultraformer III"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -771,8 +771,8 @@
     },
     {
       "id": 34,
-      "name": "Sanatorio La Trinidad",
-      "address": "1",
+      "name": "Avenida 248, Encarnación 6000",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -781,7 +781,7 @@
         "Silklase",
         "Trios"
       ],
-      "city": "",
+      "city": "Encarnacion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -790,7 +790,7 @@
     {
       "id": 35,
       "name": "Shirley Manneh",
-      "address": "1",
+      "address": "!",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -798,7 +798,7 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
@@ -807,19 +807,37 @@
     {
       "id": 36,
       "name": "VLE Clinic",
-      "address": "1",
-      "phone": "",
+      "address": "Juan Leon Mallorquín esq. M-ñor Wiessen",
+      "phone": "71208711",
       "whatsapp": "",
       "email": "",
       "hours": "",
       "equipment": [
         "Ultraformer MPT"
       ],
+      "city": "Encarnacion",
+      "distance": "0 km",
+      "lat": -27.3364993,
+      "lng": -55.8612146,
+      "treatment": "Reduccion, Tension de Piel, Tratamientos Faciales"
+    },
+    {
+      "id": 37,
+      "name": "Depyless",
+      "address": "Eusebio Lillo Robles 1109 Esquina, Asunción 1813",
+      "phone": "595981252511",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Wakefit",
+        "Venus Legacy"
+      ],
       "city": "",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Reduccion, Tension de Piel, Tratamientos Faciales"
+      "lat": -25.2874802,
+      "lng": -57.5786312,
+      "treatment": "Celulitis, Reduccion, Tonificacion Muscular, Tratamientos Faciales"
     }
   ]
 }
