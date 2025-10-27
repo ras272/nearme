@@ -1,6 +1,6 @@
 {
-  "generated_at": "2025-10-10T15:41:55.327Z",
-  "total_clinics": 37,
+  "generated_at": "2025-10-27T20:38:07.389Z",
+  "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
       "Limpieza facial",
@@ -186,13 +186,15 @@
       "hours": "",
       "equipment": [
         "Alquimia",
-        "CMSlim"
+        "CMSlim",
+        "Reaction",
+        "V10"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.279893,
       "lng": -57.57172,
-      "treatment": "Celulitis, Limpieza facial, Reducción, Tonificación muscular, Tratamientos faciales"
+      "treatment": "Celulitis, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 2,
@@ -294,13 +296,14 @@
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim"
+        "CMSlim",
+        "Hydrafacial"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2689184,
       "lng": -57.56584909999999,
-      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
+      "treatment": "Celulitis, Limpieza facial, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 8,
@@ -311,13 +314,14 @@
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim"
+        "CMSlim",
+        "Ultraformer III"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2846435,
       "lng": -57.5600655,
-      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
+      "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 9,
@@ -328,13 +332,15 @@
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim"
+        "CMSlim",
+        "Primelase",
+        "Reaction"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2551303,
       "lng": -57.5770648,
-      "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
+      "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 10,
@@ -350,8 +356,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.3108431,
-      "lng": -57.59860579999999,
+      "lat": -25.3108634,
+      "lng": -57.5985576,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -426,8 +432,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2984247,
-      "lng": -57.5651092,
+      "lat": -25.2882137,
+      "lng": -57.58903129999999,
       "treatment": "Celulitis, Depilación, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -501,13 +507,15 @@
       "hours": "",
       "equipment": [
         "C02RE",
-        "Elysion"
+        "Elysion",
+        "Hydrafacial",
+        "M22"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2591982,
       "lng": -57.5825871,
-      "treatment": "Depilación"
+      "treatment": "Depilación, Lesiones pigmentarias, Lesiones vasculares, Limpieza facial, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
       "id": 19,
@@ -518,13 +526,14 @@
       "email": "",
       "hours": "",
       "equipment": [
-        "Cooltech"
+        "Cooltech",
+        "Primelase"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2902166,
       "lng": -57.5998801,
-      "treatment": "Celulitis, Reducción"
+      "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel"
     },
     {
       "id": 20,
@@ -586,13 +595,14 @@
       "email": "",
       "hours": "",
       "equipment": [
-        "Endymed"
+        "Endymed",
+        "M22"
       ],
       "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2797468,
       "lng": -57.5666026,
-      "treatment": "Celulitis, Reducción, Tensado de piel"
+      "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tratamientos faciales"
     },
     {
       "id": 24,
@@ -771,7 +781,7 @@
     },
     {
       "id": 34,
-      "name": "Sanatorio La Trinidad",
+      "name": "Marianne Insua",
       "address": "Avenida 248, Encarnación 6000",
       "phone": "",
       "whatsapp": "",
@@ -817,8 +827,8 @@
       ],
       "city": "Encarnacion",
       "distance": "0 km",
-      "lat": -25.4302418,
-      "lng": -55.2590707,
+      "lat": -27.3364993,
+      "lng": -55.8612146,
       "treatment": "Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
@@ -838,6 +848,160 @@
       "lat": -25.2874802,
       "lng": -57.5786312,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
+    },
+    {
+      "id": 38,
+      "name": "Clinica Legrand",
+      "address": "Molas Lopez 1232, Asunción 001520",
+      "phone": "0985 135222",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Primelase",
+        "VelaShape III"
+      ],
+      "city": "Asuncion",
+      "distance": "0 km",
+      "lat": -25.2645259,
+      "lng": -57.5774885,
+      "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel"
+    },
+    {
+      "id": 39,
+      "name": "Laly Cymbaluk",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Hydrafacial"
+      ],
+      "city": "Asuncion",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Limpieza facial, Tratamientos faciales"
+    },
+    {
+      "id": 40,
+      "name": "Maria Jose Campos",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "M22"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales"
+    },
+    {
+      "id": 41,
+      "name": "Dr Jorge Rotela",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "M22"
+      ],
+      "city": "CDE",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales"
+    },
+    {
+      "id": 42,
+      "name": "Mariam Calvo",
+      "address": "Asunción 001411\r\n",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "Asuncion",
+      "distance": "0 km",
+      "lat": -25.289799,
+      "lng": -57.58017339999999,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
+    },
+    {
+      "id": 43,
+      "name": "Darla Coronel",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
+    },
+    {
+      "id": 44,
+      "name": "Karen Decoud",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
+    },
+    {
+      "id": 45,
+      "name": "Lourdes Cano",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
+    },
+    {
+      "id": 46,
+      "name": "Patricia Ojeda",
+      "address": "!",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "",
+      "distance": "0 km",
+      "lat": -23.442503,
+      "lng": -58.443832,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales"
     }
   ]
 }
