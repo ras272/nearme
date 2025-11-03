@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-10-27T20:38:07.389Z",
+  "generated_at": "2025-11-03T12:31:38.656Z",
   "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -216,7 +216,7 @@
     {
       "id": 3,
       "name": "Dermed",
-      "address": "Comandante Peralta esquina, Mauricio José Troche 2060",
+      "address": "Comandante Peralta esquina, Mauricio José Troche",
       "phone": "0991 781 246",
       "whatsapp": "0991 781 246",
       "email": "",
@@ -226,8 +226,8 @@
       ],
       "city": "Luque",
       "distance": "0 km",
-      "lat": -25.6154715,
-      "lng": -56.2739764,
+      "lat": -25.26430747,
+      "lng": -57.49429305,
       "treatment": "Limpieza facial, Tratamientos faciales"
     },
     {
@@ -432,8 +432,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2882137,
-      "lng": -57.58903129999999,
+      "lat": -25.2984247,
+      "lng": -57.5651092,
       "treatment": "Celulitis, Depilación, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
