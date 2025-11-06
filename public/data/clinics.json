@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-03T12:31:38.656Z",
+  "generated_at": "2025-11-06T12:07:43.496Z",
   "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -793,8 +793,8 @@
       ],
       "city": "Encarnacion",
       "distance": "0 km",
-      "lat": -27.3101558,
-      "lng": -55.857339,
+      "lat": -27.32671721,
+      "lng": -55.86935676,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
