@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-06T12:50:19.828Z",
+  "generated_at": "2025-11-06T13:01:56.164Z",
   "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -183,7 +183,7 @@
       "phone": "59521664424",
       "whatsapp": "59521664424",
       "email": "",
-      "hours": "https://maps.app.goo.gl/xAhmZCZNXYw7m2gk8",
+      "hours": "",
       "equipment": [
         "Alquimia",
         "CMSlim",
@@ -195,7 +195,7 @@
       "lat": -25.27976957,
       "lng": -57.57162076,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/xAhmZCZNXYw7m2gk8"
     },
     {
       "id": 2,
