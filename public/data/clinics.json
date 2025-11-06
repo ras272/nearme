@@ -1,6 +1,6 @@
 {
-  "generated_at": "2025-11-06T13:22:28.215Z",
-  "total_clinics": 46,
+  "generated_at": "2025-11-06T17:15:17.862Z",
+  "total_clinics": 44,
   "equipment_treatment_map": {
     "Alquimia": [
       "Limpieza facial",
@@ -592,7 +592,7 @@
     },
     {
       "id": 22,
-      "name": "Lovtus",
+      "name": "Justa Lovera",
       "address": "Dúplex 2, Heriberto Gómez de la Fuente 539, Asunción 001528",
       "phone": "0971 330044",
       "whatsapp": "0971 330044",
@@ -606,7 +606,7 @@
       "lat": -25.2718579,
       "lng": -57.5765251,
       "treatment": "Depilación",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/fwWJX8cfBy9itQ8u6"
     },
     {
       "id": 23,
@@ -630,7 +630,7 @@
     {
       "id": 24,
       "name": "Jesus Garcia",
-      "address": "!",
+      "address": "Capitán Emeterio Miranda 302,  Asunción ",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -640,15 +640,15 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2984247,
+      "lng": -57.5651092,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/1gsD14TwfJirRxap9"
     },
     {
       "id": 25,
       "name": "Patricia Escauriza",
-      "address": "!",
+      "address": "Carlos M. Gimenez 4817, Asunción 001414",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -658,10 +658,10 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3031388,
+      "lng": -57.5882142,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/ADgFqRG77oz25WwE6"
     },
     {
       "id": 26,
@@ -687,7 +687,7 @@
     {
       "id": 27,
       "name": "Harmonie",
-      "address": "!",
+      "address": "Mariscal Francisco Solano López 1777, Pedro Juan Caballero 130112",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -697,10 +697,10 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -22.5418501,
+      "lng": -55.7302693,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/67RUDQsEA1rbiNDd7"
     },
     {
       "id": 28,
@@ -740,42 +740,6 @@
     },
     {
       "id": 30,
-      "name": "Nascent",
-      "address": "!",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
-    },
-    {
-      "id": 31,
-      "name": "Queen",
-      "address": "!",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
-    },
-    {
-      "id": 32,
       "name": "Clinica Raquel Nazer",
       "address": "Cassianoff 531, Asunción 001411",
       "phone": "982269618",
@@ -795,9 +759,9 @@
       "mapsUrl": "https://maps.app.goo.gl/ka1u9qwr7Mb4M4Q96"
     },
     {
-      "id": 33,
+      "id": 31,
       "name": "Regina Coeli",
-      "address": "!",
+      "address": "Teniente Rivas 536, Luque 110934",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -807,13 +771,13 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2708633,
+      "lng": -57.5074442,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/eR18auDcsg9NA4gT9"
     },
     {
-      "id": 34,
+      "id": 32,
       "name": "Marianne Insua",
       "address": "Avenida 248, Encarnación 6000",
       "phone": "",
@@ -832,9 +796,9 @@
       "mapsUrl": "https://maps.app.goo.gl/Tdj7wQCqSuGNG5Hb8"
     },
     {
-      "id": 35,
+      "id": 33,
       "name": "Shirley Manneh",
-      "address": "!",
+      "address": "Moisés Bertoni 2839, Asunción",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -844,13 +808,13 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2983069,
+      "lng": -57.5613567,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/mmbE48w7WpxkAj9P8"
     },
     {
-      "id": 36,
+      "id": 34,
       "name": "VLE Clinic",
       "address": "Juan Leon Mallorquín esq. M-ñor Wiessen",
       "phone": "71208711",
@@ -868,7 +832,7 @@
       "mapsUrl": "https://maps.app.goo.gl/ufJqABapzr9GiEm68"
     },
     {
-      "id": 37,
+      "id": 35,
       "name": "Depyless",
       "address": "Eusebio Lillo Robles 1109 Esquina, Asunción 1813",
       "phone": "595981252511",
@@ -879,7 +843,7 @@
         "Wakefit",
         "Venus Legacy"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2874802,
       "lng": -57.5786312,
@@ -887,7 +851,7 @@
       "mapsUrl": "https://maps.app.goo.gl/41aVz799jdRDWPR96"
     },
     {
-      "id": 38,
+      "id": 36,
       "name": "Clinica Legrand",
       "address": "Molas Lopez 1232, Asunción 001520",
       "phone": "0985 135222",
@@ -906,7 +870,7 @@
       "mapsUrl": "https://maps.app.goo.gl/xPLaTRsyvrHst8bX9"
     },
     {
-      "id": 39,
+      "id": 37,
       "name": "Laly Cymbaluk",
       "address": "!",
       "phone": "",
@@ -924,9 +888,9 @@
       "mapsUrl": ""
     },
     {
-      "id": 40,
+      "id": 38,
       "name": "Maria Jose Campos",
-      "address": "!",
+      "address": "Sta. Ana 830 esq, Asunción 001528",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -934,15 +898,15 @@
       "equipment": [
         "M22"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2815092,
+      "lng": -57.57263,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/m5g6hqz2DsWurUgC8"
     },
     {
-      "id": 41,
+      "id": 39,
       "name": "Dr Jorge Rotela",
       "address": "!",
       "phone": "",
@@ -960,7 +924,7 @@
       "mapsUrl": ""
     },
     {
-      "id": 42,
+      "id": 40,
       "name": "Mariam Calvo",
       "address": "Asunción 001411\n",
       "phone": "",
@@ -978,7 +942,7 @@
       "mapsUrl": ""
     },
     {
-      "id": 43,
+      "id": 41,
       "name": "Darla Coronel",
       "address": "!",
       "phone": "",
@@ -988,53 +952,53 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -23.442503,
       "lng": -58.443832,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": ""
+    },
+    {
+      "id": 42,
+      "name": "Karen Decoud",
+      "address": "San Miguel 443, San Lorenzo 111402",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "San Lorenzo",
+      "distance": "0 km",
+      "lat": -25.3045029,
+      "lng": -57.5264384,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
+      "mapsUrl": "https://maps.app.goo.gl/ZUmfL5A2ssmBaho77"
+    },
+    {
+      "id": 43,
+      "name": "Lourdes Cano",
+      "address": "Cap. Rivas Fernando de la Mora, 2300",
+      "phone": "",
+      "whatsapp": "",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Reaction"
+      ],
+      "city": "Asuncion",
+      "distance": "0 km",
+      "lat": -25.3171178,
+      "lng": -57.5263959,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
+      "mapsUrl": "https://maps.app.goo.gl/dHhcYo4VfVVzCGsi6"
     },
     {
       "id": 44,
-      "name": "Karen Decoud",
-      "address": "!",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
-    },
-    {
-      "id": 45,
-      "name": "Lourdes Cano",
-      "address": "!",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "",
-      "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
-      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
-    },
-    {
-      "id": 46,
       "name": "Patricia Ojeda",
-      "address": "!",
+      "address": "MCWV+V9H, Manuel Talavera, Asunción 001405",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -1044,10 +1008,10 @@
       ],
       "city": "",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2989412,
+      "lng": -57.5541697,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/6E5opRXCP3r693sw5"
     }
   ]
 }
