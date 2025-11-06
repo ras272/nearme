@@ -369,8 +369,13 @@ export default function ClinicFinder() {
                         className="rounded-xl border-gray-200 hover:bg-gray-50 text-xs px-3 py-2"
                         onClick={(e) => {
                           e.stopPropagation()
-                          const address = encodeURIComponent(clinic.address)
-                          window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, "_blank")
+                          // Use direct Maps URL if available, otherwise fallback to address search
+                          if (clinic.mapsUrl && clinic.mapsUrl.trim() !== "") {
+                            window.open(clinic.mapsUrl, "_blank")
+                          } else {
+                            const address = encodeURIComponent(clinic.address)
+                            window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, "_blank")
+                          }
                         }}
                       >
                         <MapPin className="w-3 h-3 mr-1" />
