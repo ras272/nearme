@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-06T13:01:56.164Z",
+  "generated_at": "2025-11-06T13:22:28.215Z",
   "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -213,7 +213,7 @@
       "lat": -25.29838616,
       "lng": -57.58828995,
       "treatment": "Limpieza facial, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/TnpWFHGF4U19d4x47"
     },
     {
       "id": 3,
@@ -231,7 +231,7 @@
       "lat": -25.26430747,
       "lng": -57.49429305,
       "treatment": "Limpieza facial, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/xMm2qCkLJQtyuXMa8"
     },
     {
       "id": 4,
@@ -253,7 +253,7 @@
       "lat": -25.29970506,
       "lng": -57.58303802,
       "treatment": "Celulitis, Lesiones pigmentarias, Limpieza facial, Reducción, Rejuvenecimiento de piel, Tatuajes, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/116HeTJMHWF2y7c99"
     },
     {
       "id": 5,
@@ -272,7 +272,7 @@
       "lat": -25.30604557,
       "lng": -57.6197547,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/8f7JDoAm3BAjuF499"
     },
     {
       "id": 6,
@@ -291,7 +291,7 @@
       "lat": -25.2684406,
       "lng": -57.56282311,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/XkZsHsZPi98RWKzy5"
     },
     {
       "id": 7,
@@ -310,7 +310,7 @@
       "lat": -25.26865911,
       "lng": -57.56624707,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/EvgLhgWwDpQ5xaJt6"
     },
     {
       "id": 8,
@@ -329,7 +329,7 @@
       "lat": -25.26853565,
       "lng": -57.56259269,
       "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/s7ckMZ9AG5ijQkLD9"
     },
     {
       "id": 9,
@@ -349,7 +349,7 @@
       "lat": -25.2551666,
       "lng": -57.5772593,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/SGKfuFDWyFo21J619"
     },
     {
       "id": 10,
@@ -368,7 +368,7 @@
       "lat": -25.31055868,
       "lng": -57.59859808,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/dCsvDJ91mDSey2J59"
     },
     {
       "id": 11,
@@ -387,7 +387,7 @@
       "lat": -25.30904857,
       "lng": -57.58890242,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/ti6wEScz7Bv1ihRn7"
     },
     {
       "id": 12,
@@ -407,7 +407,7 @@
       "lat": -25.39353634,
       "lng": -57.3562751,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/yhARuSwzbRi78kTXA"
     },
     {
       "id": 13,
@@ -427,7 +427,7 @@
       "lat": -24.97280524,
       "lng": -54.91881039,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/NqqHgNuxgYnfqR3i8"
     },
     {
       "id": 14,
@@ -448,7 +448,7 @@
       "lat": -25.29817836,
       "lng": -57.56517126,
       "treatment": "Celulitis, Depilación, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/raGQpjv4McNfJKvD8"
     },
     {
       "id": 15,
@@ -466,7 +466,7 @@
       "lat": -25.33756461,
       "lng": -57.62211553,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/xmrVLK9pNLfc8JbL6"
     },
     {
       "id": 16,
@@ -486,7 +486,7 @@
       "lat": -25.27935991,
       "lng": -57.56940409,
       "treatment": "Celulitis, Incontinencia urinaria, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales, Zona intima",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/iPY3WHSfUpBq94EN9"
     },
     {
       "id": 17,
@@ -512,7 +512,7 @@
       "lat": -25.28256463,
       "lng": -57.58039205,
       "treatment": "Celulitis, Depilación, Lesiones pigmentarias, Lesiones vasculares, Limpieza facial, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/M45zFyQhaLdgqhBx9"
     },
     {
       "id": 18,
@@ -533,7 +533,7 @@
       "lat": -25.25884199,
       "lng": -57.58265059,
       "treatment": "Depilación, Lesiones pigmentarias, Lesiones vasculares, Limpieza facial, Rejuvenecimiento de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/gCzourXniPeKhZYA8"
     },
     {
       "id": 19,
@@ -552,7 +552,7 @@
       "lat": -25.2902166,
       "lng": -57.5998801,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/Ff5RhgPjKUYzRqD48"
     },
     {
       "id": 20,
@@ -570,7 +570,7 @@
       "lat": -25.2901629,
       "lng": -57.57711579999999,
       "treatment": "Depilación",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/wqWCjuM2qGTLsqbH6"
     },
     {
       "id": 21,
@@ -588,7 +588,7 @@
       "lat": -25.524881,
       "lng": -54.6211164,
       "treatment": "Depilación",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/F6ndty1VjJPPU9fQ9"
     },
     {
       "id": 22,
@@ -682,7 +682,7 @@
       "lat": -25.2855647,
       "lng": -57.5684493,
       "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Limpieza facial, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/xBzgaiaqyFT8n4qw9"
     },
     {
       "id": 27,
@@ -736,7 +736,7 @@
       "lat": -25.2934437,
       "lng": -57.5719873,
       "treatment": "Depilación, Rejuvenecimiento de piel",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/HyQC13mpTXCHvDhG7"
     },
     {
       "id": 30,
@@ -792,7 +792,7 @@
       "lat": -25.289799,
       "lng": -57.58017339999999,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/ka1u9qwr7Mb4M4Q96"
     },
     {
       "id": 33,
@@ -829,7 +829,7 @@
       "lat": -27.32671721,
       "lng": -55.86935676,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/Tdj7wQCqSuGNG5Hb8"
     },
     {
       "id": 35,
@@ -865,7 +865,7 @@
       "lat": -27.33555322,
       "lng": -55.86755087,
       "treatment": "Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/ufJqABapzr9GiEm68"
     },
     {
       "id": 37,
@@ -884,7 +884,7 @@
       "lat": -25.2874802,
       "lng": -57.5786312,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/41aVz799jdRDWPR96"
     },
     {
       "id": 38,
@@ -903,7 +903,7 @@
       "lat": -25.2645259,
       "lng": -57.5774885,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/xPLaTRsyvrHst8bX9"
     },
     {
       "id": 39,
@@ -962,7 +962,7 @@
     {
       "id": 42,
       "name": "Mariam Calvo",
-      "address": "Asunción 001411\r\n",
+      "address": "Asunción 001411\n",
       "phone": "",
       "whatsapp": "",
       "email": "",
