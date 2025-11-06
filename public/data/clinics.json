@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-06T12:22:43.582Z",
+  "generated_at": "2025-11-06T12:26:03.313Z",
   "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -301,8 +301,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2684305,
-      "lng": -57.56632055,
+      "lat": -25.26865911,
+      "lng": -57.56624707,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
