@@ -11,6 +11,7 @@ export interface ClinicData {
   latitud: number
   longitud: number
   ciudad: string
+  maps_url: string
 }
 
 export interface Clinic {
@@ -27,6 +28,7 @@ export interface Clinic {
   lat: number
   lng: number
   treatment: string // Nuevo campo para el tipo de tratamiento
+  mapsUrl?: string // URL directo de Google Maps (opcional)
 }
 
 export interface TreatmentData {
@@ -71,7 +73,7 @@ const GOOGLE_SHEETS_CONFIG = {
   spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ID || "",
   // Only 2 sheets: Clinicas (all clinics) + TXS (equipment → treatments mapping)
   sheets: {
-    "Clinicas": "Clinicas!A2:J",  // All clinics in one sheet
+    "Clinicas": "Clinicas!A2:K",  // All clinics in one sheet (K = maps_url)
     "TXS": "TXS!A2:B"              // Equipment to treatments mapping
   }
 }
@@ -389,11 +391,11 @@ function mapEquipmentsToTreatments(
 
 // Transform raw Google Sheets data to our Clinic interface (NEW VERSION - no treatment param)
 function transformSheetDataToClinic(
-  data: any[], 
-  index: number, 
+  data: any[],
+  index: number,
   equipmentTreatmentMap: EquipmentTreatmentMap
 ): Clinic {
-  const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad] = data
+  const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad, maps_url] = data
 
   // Parse equipment list
   const equipmentList = equipos 
@@ -426,7 +428,8 @@ function transformSheetDataToClinic(
     distance: "0 km", // Will be calculated based on user location
     lat,
     lng,
-    treatment: treatments.join(", ") // Treatments mapped dynamically from equipment
+    treatment: treatments.join(", "), // Treatments mapped dynamically from equipment
+    mapsUrl: maps_url || "" // Direct Google Maps link
   }
 }
 
@@ -653,7 +656,7 @@ async function fetchClinicsFromSheetsAPI(
     // ============================================
     // STEP 2: Read single "Clinicas" sheet
     // ============================================
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/Clinicas!A2:J?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/Clinicas!A2:K?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
     
     console.log(`📋 Fetching all clinics from single "Clinicas" sheet...`)
     

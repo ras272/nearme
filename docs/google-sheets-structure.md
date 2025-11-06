@@ -1,83 +1,114 @@
-# Estructura de Google Sheet para NEARME - Organizada por Tratamientos
+# Estructura de Google Sheet para NEARME - Arquitectura Simplificada (2 Hojas)
 
-## Configuración del Sheet
+## 🎯 Nueva Arquitectura
+
+El sistema ahora usa **solo 2 hojas** en lugar de 24+ hojas por tratamiento:
 
 ### Nombre del archivo: `Clinicas Ares Paraguay`
 
-### Estructura de hojas por tratamiento:
+---
 
-El spreadsheet debe tener una hoja separada para cada tipo de tratamiento:
+## 📋 Hoja 1: "Clinicas" - Todas las clínicas
 
-1. **Reduccion** - Equipos para reducción corporal
-2. **Tensando_Body** - Equipos para tensado corporal
-3. **Modelado** - Equipos para modelado corporal
-4. **Depilacion_Body** - Equipos para depilación corporal
-5. **Musculatura** - Equipos para musculación y fitness
-6. **Drenaje_Body** - Equipos para drenaje corporal
-7. **TX_Piel** - Equipos para tratamiento de piel
-8. **Vasculares_Body** - Equipos para tratamientos vasculares corporales
-9. **Tatuajes** - Equipos para remoción de tatuajes
-10. **Gineco** - Equipos ginecológicos
-11. **Tensando_Facial** - Equipos para tensado facial
-12. **Fotoenv** - Equipos de fotoenvejecimiento
-13. **Pigmentarias** - Equipos para tratamiento de pigmentaciones
-14. **Limpieza_Facial** - Equipos para limpieza facial
-15. **Lineas_exp** - Equipos para líneas de expresión
-16. **Ojos** - Equipos para tratamiento del contorno de ojos
-17. **Vasculares_Facial** - Equipos para tratamientos vasculares faciales
-18. **Cic_Acne** - Equipos para cicatrices de acné
-19. **Acne** - Equipos para tratamiento del acné
-20. **Drenaje_Facial** - Equipos para drenaje facial
-21. **Drug_Delivery** - Equipos de liberación de medicamentos
-22. **Depilacion_Facial** - Equipos para depilación facial
-23. **Celulitis** - Equipos para tratamiento de celulitis
+**Rango de datos**: `A2:K` (Columnas A hasta K, desde fila 2)
 
-### Estructura de columnas para CADA hoja (Fila 1 - Headers):
+### Estructura de columnas (Fila 1 - Headers):
 
-| A | B | C | D | E | F | G | H | I | J |
-|---|---|---|---|---|---|---|---|---|---|
-| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad |
+| A | B | C | D | E | F | G | H | I | J | K |
+|---|---|---|---|---|---|---|---|---|---|---|
+| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad | maps_url |
 
-### Ejemplo de datos por hoja:
+### Descripción de columnas:
 
-#### Hoja "Reduccion" (Fila 2 en adelante):
+- **A (nombre_clinica)**: Nombre de la clínica
+- **B (direccion)**: Dirección completa
+- **C (telefono)**: Teléfono con código de país (+595)
+- **D (whatsapp)**: WhatsApp con código de país (+595)
+- **E (email)**: Correo electrónico
+- **F (horarios)**: Horarios de atención (ej: Lun-Vie: 8:00-18:00)
+- **G (equipos)**: Lista de equipos separados por comas (ej: CMSlim, Endymed, Hydrafacial)
+- **H (latitud)**: Coordenada decimal (ej: -25.2637)
+- **I (longitud)**: Coordenada decimal (ej: -57.5759)
+- **J (ciudad)**: Ciudad donde está ubicada
+- **K (maps_url)**: ✨ **NUEVO** - Link directo de Google Maps (ej: https://maps.app.goo.gl/xxxxx)
 
-| A | B | C | D | E | F | G | H | I | J |
-|---|---|---|---|---|---|---|---|---|---|
-| Centro Médico Fitness | Av. España 1234, Asunción | +595 21 123456 | +595 981 123456 | info@fitness.com.py | Lun-Vie: 8:00-18:00 | CMSlim,Equipo A | -25.2637 | -57.5759 | Asunción |
-| Clínica Wellness | Ruta 2 Km 15, Ciudad del Este | +595 61 456789 | +595 982 456789 | contacto@wellness.com.py | Lun-Sab: 7:00-19:00 | CMSlim,Equipo B | -25.5095 | -54.6112 | Ciudad del Este |
+### Ejemplo de datos (Fila 2 en adelante):
 
-#### Hoja "Depilacion_Body" (Fila 2 en adelante):
+| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad | maps_url |
+|----------------|-----------|----------|----------|--------|----------|---------|---------|----------|---------|----------|
+| Benestar | Julio Correa 1591, Asunción | +595 21 123456 | +595 981 123456 | info@benestar.com | Lun-Vie: 8:00-18:00 | CMSlim, Endymed, Hydrafacial | -25.27 | -57.57 | Asuncion | https://maps.app.goo.gl/xxxxx |
+| Centro Wellness | Av. España 1234, San Lorenzo | +595 21 654321 | +595 982 654321 | contacto@wellness.py | Lun-Sab: 7:00-19:00 | CMSlim, Hydrafacial | -25.34 | -57.51 | San Lorenzo | https://maps.app.goo.gl/yyyyy |
 
-| A | B | C | D | E | F | G | H | I | J |
-|---|---|---|---|---|---|---|---|---|---|
-| Centro Médico Wellness | Ruta 2 Km 15, Ciudad del Este | +595 61 456789 | +595 982 456789 | contacto@wellness.com.py | Lun-Sab: 7:00-19:00 | CMSlim,Láser C | -25.5095 | -54.6112 | Ciudad del Este |
-| Estética Bella | Av. Mariscal López 567, Encarnación | +595 71 789012 | +595 983 789012 | info@bella.com.py | Lun-Vie: 8:30-17:30 | Láser D | -27.3378 | -55.8683 | Encarnación |
+---
 
-## Ventajas de esta estructura:
+## 🔗 Hoja 2: "TXS" - Mapeo de Equipos a Tratamientos
 
-1. **Misma clínica en múltiples hojas**: Una clinica puede ofrecer varias hojas_*^que son simila829
-2. **Equipos específicos por tratamiento**: Cada hoja muestra solo los equipos relevantes para ese tratamiento
-3. **Búsqueda eficiente**: Los usuarios pueden filtrar directamente por tipo de tratamiento
-4. **Organización clara**: Fácil mantenimiento y actualización de datos
+**Rango de datos**: `A2:B` (Columnas A y B, desde fila 2)
 
-## Notas importantes:
+### Estructura de columnas (Fila 1 - Headers):
 
-1. **equipos**: Separar múltiples equipos con comas (,)
-2. **latitud/longitud**: Usar formato decimal (ej: -25.2637)
-3. **whatsapp**: Incluir código de país (+595)
-4. **Nombres de hojas**: Deben coincidir exactamente con los configurados en el código
-5. **Los headers deben estar en la fila 1 de cada hoja**
-6. **Los datos deben empezar en la fila 2 de cada hoja**
-7. **Una clínica puede repetirse en varias hojas con diferentes equipos**
+| A (EQUIPO) | B (TRATAMIENTOS) |
+|------------|------------------|
+| Nombre del equipo | Lista de tratamientos separados por comas |
 
-## Cómo obtener coordenadas:
+### Ejemplo de datos:
 
+| EQUIPO | TRATAMIENTOS |
+|--------|--------------|
+| CMSlim | Tonificacion Muscular, Tratamientos Faciales, Reduccion, Celulitis |
+| Hydrafacial | Limpieza Facial, Tratamientos Faciales |
+| Endymed | Tensado Facial, Tratamientos Faciales, Lineas de Expresion |
+| Morpheus8 | Tensado Facial, Rejuvenecimiento, Cicatrices |
+
+---
+
+## ✨ Ventajas de la nueva arquitectura:
+
+1. ✅ **Mantenimiento simplificado**: Solo 2 hojas vs 24+ hojas
+2. ✅ **Sin duplicación**: Cada clínica aparece una sola vez
+3. ✅ **Mapeo automático**: Los tratamientos se asignan dinámicamente según los equipos
+4. ✅ **Escalabilidad**: Agregar nuevos equipos/tratamientos solo requiere actualizar la hoja TXS
+5. ✅ **Links directos de Maps**: Muestra el nombre de la clínica en Google Maps, no solo coordenadas
+
+## 📝 Notas importantes:
+
+### Hoja "Clinicas":
+1. **equipos** (columna G): Separar múltiples equipos con comas (ej: CMSlim, Endymed)
+2. **latitud/longitud** (columnas H, I): Usar formato decimal (ej: -25.2637, -57.5759)
+3. **whatsapp** (columna D): Incluir código de país (+595 981 123456)
+4. **maps_url** (columna K): ✨ **NUEVO** - Link directo de Google Maps
+5. **Nombres de hojas**: Deben ser exactamente **"Clinicas"** y **"TXS"**
+6. **Los headers deben estar en la fila 1**
+7. **Los datos deben empezar en la fila 2**
+8. **Cada clínica aparece UNA SOLA VEZ** con todos sus equipos listados
+
+### Hoja "TXS":
+1. Columna A: Nombre exacto del equipo (debe coincidir con lo listado en "Clinicas")
+2. Columna B: Tratamientos separados por comas
+
+---
+
+## 🗺️ Cómo obtener el link de Google Maps (maps_url):
+
+**Opción 1: Link directo de negocio** (Recomendado)
 1. Ve a [Google Maps](https://maps.google.com)
-2. Busca la dirección de la clínica
-3. Haz clic derecho en el marcador
-4. Selecciona las coordenadas que aparecen
-5. El primer número es latitud, el segundo es longitud
+2. Busca el nombre de la clínica
+3. Haz clic en **"Compartir"**
+4. Copia el enlace corto (formato: `https://maps.app.goo.gl/xxxxx`)
+5. Pégalo en la columna K
+
+**Opción 2: Coordenadas** (Fallback)
+1. Busca la dirección en Google Maps
+2. Haz clic derecho en el marcador
+3. Selecciona las coordenadas
+4. El primer número es **latitud** (columna H)
+5. El segundo número es **longitud** (columna I)
+
+**💡 Ventaja del link directo:**
+- Muestra el nombre de la clínica en Maps
+- Incluye fotos, reviews y horarios
+- Mejor experiencia de usuario
+- Navegación más precisa
 
 ## Permisos del Sheet:
 

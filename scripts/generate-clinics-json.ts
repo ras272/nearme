@@ -36,6 +36,7 @@ interface Clinic {
   lat: number
   lng: number
   treatment: string
+  mapsUrl?: string
 }
 
 // ============================================
@@ -47,7 +48,7 @@ const GOOGLE_SHEETS_CONFIG = {
   spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ID || "",
   // Only 2 sheets: Clinicas (all clinics) + TXS (equipment → treatments mapping)
   sheets: {
-    "Clinicas": "Clinicas!A2:J",
+    "Clinicas": "Clinicas!A2:K",  // K = maps_url
     "TXS": "TXS!A2:B"
   }
 }
@@ -183,11 +184,11 @@ async function geocodeAddress(address: string): Promise<{ lat: number; lng: numb
 
 // Transform raw data to Clinic (NEW VERSION - with equipment mapping)
 function transformSheetDataToClinic(
-  data: any[], 
-  index: number, 
+  data: any[],
+  index: number,
   equipmentTreatmentMap: EquipmentTreatmentMap
 ): Clinic {
-  const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad] = data
+  const [nombre_clinica, direccion, telefono, whatsapp, email, horarios, equipos, latitud, longitud, ciudad, maps_url] = data
 
   // Parse equipment list
   const equipmentList = equipos 
@@ -218,7 +219,8 @@ function transformSheetDataToClinic(
     distance: "0 km",
     lat,
     lng,
-    treatment: treatments.join(", ") // Treatments mapped dynamically from equipment
+    treatment: treatments.join(", "), // Treatments mapped dynamically from equipment
+    mapsUrl: maps_url || "" // Direct Google Maps link
   }
 }
 
@@ -338,7 +340,7 @@ async function generateClinicsJSON() {
     // STEP 2: Read single "Clinicas" sheet
     // ============================================
     console.log('📥 Fetching Clinicas sheet...')
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/Clinicas!A2:J?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_CONFIG.spreadsheetId}/values/Clinicas!A2:K?key=${GOOGLE_SHEETS_CONFIG.apiKey}`
     
     const response = await fetch(url)
     

@@ -456,7 +456,7 @@ export default function GoogleMap({ clinics, onClinicSelect }: GoogleMapProps) {
                 WhatsApp
               </button>
               
-              <button onclick="window.open('https://www.google.com/maps/dir/?api=1${userLocation ? `&origin=${userLocation.lat},${userLocation.lng}` : ''}&destination=${encodeURIComponent(clinic.address)}')"
+              <button onclick="window.open('${clinic.mapsUrl && clinic.mapsUrl.trim() !== "" ? clinic.mapsUrl : `https://www.google.com/maps/dir/?api=1${userLocation ? `&origin=${userLocation.lat},${userLocation.lng}` : ""}&destination=${encodeURIComponent(clinic.address)}`}')"
                       style="
                         background: #ffffff;
                         color: #374151;

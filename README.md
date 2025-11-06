@@ -53,14 +53,14 @@ El sistema requiere **2 hojas** en tu Google Spreadsheet:
 
 #### **Hoja "Clinicas"** - Todas las clínicas
 
-| A | B | C | D | E | F | G | H | I | J |
-|---|---|---|---|---|---|---|---|---|---|
-| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad |
+| A | B | C | D | E | F | G | H | I | J | K |
+|---|---|---|---|---|---|---|---|---|---|---|
+| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad | maps_url |
 
 **Ejemplo:**
-| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad |
-|----------------|-----------|----------|----------|--------|----------|---------|---------|----------|---------|
-| Benestar | Julio Correa 1591, Asunción | +595 21 123456 | +595 981 123456 | info@benestar.com | Lun-Vie: 8:00-18:00 | CMSlim, Endymed, Hydrafacial | -25.27 | -57.57 | Asuncion |
+| nombre_clinica | direccion | telefono | whatsapp | email | horarios | equipos | latitud | longitud | ciudad | maps_url |
+|----------------|-----------|----------|----------|--------|----------|---------|---------|----------|---------|----------|
+| Benestar | Julio Correa 1591, Asunción | +595 21 123456 | +595 981 123456 | info@benestar.com | Lun-Vie: 8:00-18:00 | CMSlim, Endymed, Hydrafacial | -25.27 | -57.57 | Asuncion | https://maps.app.goo.gl/xxxxx |
 
 #### **Hoja "TXS"** - Mapeo equipos → tratamientos
 
@@ -76,6 +76,9 @@ El sistema requiere **2 hojas** en tu Google Spreadsheet:
 - En "Clinicas", separar múltiples equipos con **comas** (columna G)
 - En "TXS", separar múltiples tratamientos con **comas** (columna B)
 - Coordenadas en **formato decimal** (-25.2637, -57.5759)
+- **maps_url** (columna K): Link directo de Google Maps (formato: https://maps.app.goo.gl/xxxxx)
+  - Para obtener el link: Buscar clínica en Google Maps → Compartir → Copiar enlace
+  - Si no se proporciona, se usará la dirección de texto como fallback
 - Hacer el sheet **público** o compartido con "cualquier persona con el enlace puede ver"
 - **Los tratamientos se asignan automáticamente** según los equipos listados
 

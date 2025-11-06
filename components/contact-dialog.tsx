@@ -61,8 +61,13 @@ Saludos cordiales.`)
   }
 
   const handleDirections = () => {
-    const encodedAddress = encodeURIComponent(clinic.address)
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, "_blank")
+    // Use direct Maps URL if available, otherwise fallback to address
+    if (clinic.mapsUrl && clinic.mapsUrl.trim() !== "") {
+      window.open(clinic.mapsUrl, "_blank")
+    } else {
+      const encodedAddress = encodeURIComponent(clinic.address)
+      window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, "_blank")
+    }
   }
 
   const handleShare = async () => {
