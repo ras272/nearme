@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-06T12:07:43.496Z",
+  "generated_at": "2025-11-06T12:22:43.582Z",
   "total_clinics": 46,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -192,8 +192,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.279893,
-      "lng": -57.57172,
+      "lat": -25.27976957,
+      "lng": -57.57162076,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -209,8 +209,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.3051543,
-      "lng": -57.5720096,
+      "lat": -25.29838616,
+      "lng": -57.58828995,
       "treatment": "Limpieza facial, Tratamientos faciales"
     },
     {
@@ -247,8 +247,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2999142,
-      "lng": -57.58303830000001,
+      "lat": -25.29970506,
+      "lng": -57.58303802,
       "treatment": "Celulitis, Lesiones pigmentarias, Limpieza facial, Reducción, Rejuvenecimiento de piel, Tatuajes, Tensado de piel, Tratamientos faciales"
     },
     {
@@ -265,8 +265,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.3057986,
-      "lng": -57.6193705,
+      "lat": -25.30604557,
+      "lng": -57.6197547,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
@@ -283,8 +283,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.268755,
-      "lng": -57.5627624,
+      "lat": -25.2684406,
+      "lng": -57.56282311,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -301,8 +301,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2689184,
-      "lng": -57.56584909999999,
+      "lat": -25.2684305,
+      "lng": -57.56632055,
       "treatment": "Celulitis, Limpieza facial, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -319,8 +319,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2846435,
-      "lng": -57.5600655,
+      "lat": -25.26853565,
+      "lng": -57.56259269,
       "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -338,8 +338,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2551303,
-      "lng": -57.5770648,
+      "lat": -25.2551666,
+      "lng": -57.5772593,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -356,8 +356,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.3108634,
-      "lng": -57.5985576,
+      "lat": -25.31055868,
+      "lng": -57.59859808,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -374,14 +374,14 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.3095164,
-      "lng": -57.5882064,
+      "lat": -25.30904857,
+      "lng": -57.58890242,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
       "id": 12,
       "name": "Galego ITA",
-      "address": "115 de Agosto 218, Itauguá 110611",
+      "address": "15 de Agosto 218, Itauguá 110611",
       "phone": "0982 926284",
       "whatsapp": "0982 926284",
       "email": "",
@@ -393,8 +393,8 @@
       ],
       "city": "Itaugua",
       "distance": "0 km",
-      "lat": -25.3932143,
-      "lng": -57.35953829999999,
+      "lat": -25.39353634,
+      "lng": -57.3562751,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -412,8 +412,8 @@
       ],
       "city": "San Alberto",
       "distance": "0 km",
-      "lat": -24.9719693,
-      "lng": -54.9206047,
+      "lat": -24.97280524,
+      "lng": -54.91881039,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -432,8 +432,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2984247,
-      "lng": -57.5651092,
+      "lat": -25.29817836,
+      "lng": -57.56517126,
       "treatment": "Celulitis, Depilación, Limpieza facial, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -449,8 +449,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.3378094,
-      "lng": -57.62214770000001,
+      "lat": -25.33756461,
+      "lng": -57.62211553,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -468,8 +468,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2795638,
-      "lng": -57.5695221,
+      "lat": -25.27935991,
+      "lng": -57.56940409,
       "treatment": "Celulitis, Incontinencia urinaria, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales, Zona intima"
     },
     {
@@ -493,8 +493,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2795736,
-      "lng": -57.5793007,
+      "lat": -25.28256463,
+      "lng": -57.58039205,
       "treatment": "Celulitis, Depilación, Lesiones pigmentarias, Lesiones vasculares, Limpieza facial, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales"
     },
     {
@@ -513,8 +513,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2591982,
-      "lng": -57.5825871,
+      "lat": -25.25884199,
+      "lng": -57.58265059,
       "treatment": "Depilación, Lesiones pigmentarias, Lesiones vasculares, Limpieza facial, Rejuvenecimiento de piel, Tratamientos faciales"
     },
     {
@@ -827,8 +827,8 @@
       ],
       "city": "Encarnacion",
       "distance": "0 km",
-      "lat": -27.3364993,
-      "lng": -55.8612146,
+      "lat": -27.33555322,
+      "lng": -55.86755087,
       "treatment": "Reducción, Tensado de piel, Tratamientos faciales"
     },
     {
