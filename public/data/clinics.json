@@ -1,6 +1,6 @@
 {
-  "generated_at": "2025-11-06T17:15:17.862Z",
-  "total_clinics": 44,
+  "generated_at": "2025-11-06T17:31:34.786Z",
+  "total_clinics": 43,
   "equipment_treatment_map": {
     "Alquimia": [
       "Limpieza facial",
@@ -625,7 +625,7 @@
       "lat": -25.2797468,
       "lng": -57.5666026,
       "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/dRz2ripfeMXyavwe6"
     },
     {
       "id": 24,
@@ -686,26 +686,8 @@
     },
     {
       "id": 27,
-      "name": "Harmonie",
-      "address": "Mariscal Francisco Solano López 1777, Pedro Juan Caballero 130112",
-      "phone": "",
-      "whatsapp": "",
-      "email": "",
-      "hours": "",
-      "equipment": [
-        "Reaction"
-      ],
-      "city": "Asuncion",
-      "distance": "0 km",
-      "lat": -22.5418501,
-      "lng": -55.7302693,
-      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": "https://maps.app.goo.gl/67RUDQsEA1rbiNDd7"
-    },
-    {
-      "id": 28,
       "name": "Jessica Arce",
-      "address": "!",
+      "address": "Julia Miranda Cueto 210 esq, Fernando de la Mora 2300\r\n",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -713,15 +695,15 @@
       "equipment": [
         "Lipodefine"
       ],
-      "city": "Asuncion",
+      "city": "Fernando de la Mora",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.3213866,
+      "lng": -57.56061630000001,
       "treatment": "Reducción, Tensado de piel",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/TzhRSBExgiYopwuR9"
     },
     {
-      "id": 29,
+      "id": 28,
       "name": "Moksha",
       "address": "Jose Ocampos Lanzoni 560 c, Asunción 1405",
       "phone": "595991637040",
@@ -739,7 +721,7 @@
       "mapsUrl": "https://maps.app.goo.gl/HyQC13mpTXCHvDhG7"
     },
     {
-      "id": 30,
+      "id": 29,
       "name": "Clinica Raquel Nazer",
       "address": "Cassianoff 531, Asunción 001411",
       "phone": "982269618",
@@ -759,7 +741,7 @@
       "mapsUrl": "https://maps.app.goo.gl/ka1u9qwr7Mb4M4Q96"
     },
     {
-      "id": 31,
+      "id": 30,
       "name": "Regina Coeli",
       "address": "Teniente Rivas 536, Luque 110934",
       "phone": "",
@@ -777,7 +759,7 @@
       "mapsUrl": "https://maps.app.goo.gl/eR18auDcsg9NA4gT9"
     },
     {
-      "id": 32,
+      "id": 31,
       "name": "Marianne Insua",
       "address": "Avenida 248, Encarnación 6000",
       "phone": "",
@@ -796,7 +778,7 @@
       "mapsUrl": "https://maps.app.goo.gl/Tdj7wQCqSuGNG5Hb8"
     },
     {
-      "id": 33,
+      "id": 32,
       "name": "Shirley Manneh",
       "address": "Moisés Bertoni 2839, Asunción",
       "phone": "",
@@ -814,7 +796,7 @@
       "mapsUrl": "https://maps.app.goo.gl/mmbE48w7WpxkAj9P8"
     },
     {
-      "id": 34,
+      "id": 33,
       "name": "VLE Clinic",
       "address": "Juan Leon Mallorquín esq. M-ñor Wiessen",
       "phone": "71208711",
@@ -832,7 +814,7 @@
       "mapsUrl": "https://maps.app.goo.gl/ufJqABapzr9GiEm68"
     },
     {
-      "id": 35,
+      "id": 34,
       "name": "Depyless",
       "address": "Eusebio Lillo Robles 1109 Esquina, Asunción 1813",
       "phone": "595981252511",
@@ -851,7 +833,7 @@
       "mapsUrl": "https://maps.app.goo.gl/41aVz799jdRDWPR96"
     },
     {
-      "id": 36,
+      "id": 35,
       "name": "Clinica Legrand",
       "address": "Molas Lopez 1232, Asunción 001520",
       "phone": "0985 135222",
@@ -870,11 +852,11 @@
       "mapsUrl": "https://maps.app.goo.gl/xPLaTRsyvrHst8bX9"
     },
     {
-      "id": 37,
+      "id": 36,
       "name": "Laly Cymbaluk",
-      "address": "!",
-      "phone": "",
-      "whatsapp": "",
+      "address": "Soldado Desconocido 428, Asunción 2101",
+      "phone": "985444740",
+      "whatsapp": "985444740",
       "email": "",
       "hours": "",
       "equipment": [
@@ -882,13 +864,13 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.2829599,
+      "lng": -57.5824796,
       "treatment": "Limpieza facial, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/nzv6SNmKRVbgrzxa9"
     },
     {
-      "id": 38,
+      "id": 37,
       "name": "Maria Jose Campos",
       "address": "Sta. Ana 830 esq, Asunción 001528",
       "phone": "",
@@ -906,7 +888,7 @@
       "mapsUrl": "https://maps.app.goo.gl/m5g6hqz2DsWurUgC8"
     },
     {
-      "id": 39,
+      "id": 38,
       "name": "Dr Jorge Rotela",
       "address": "!",
       "phone": "",
@@ -924,7 +906,7 @@
       "mapsUrl": ""
     },
     {
-      "id": 40,
+      "id": 39,
       "name": "Mariam Calvo",
       "address": "Asunción 001411\n",
       "phone": "",
@@ -942,9 +924,9 @@
       "mapsUrl": ""
     },
     {
-      "id": 41,
+      "id": 40,
       "name": "Darla Coronel",
-      "address": "!",
+      "address": "Mariscal Francisco Solano López 1777, Pedro Juan Caballero 130112",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -952,15 +934,15 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "Asuncion",
+      "city": "Pedro Juan Caballero",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -22.5418501,
+      "lng": -55.7302693,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/67RUDQsEA1rbiNDd7"
     },
     {
-      "id": 42,
+      "id": 41,
       "name": "Karen Decoud",
       "address": "San Miguel 443, San Lorenzo 111402",
       "phone": "",
@@ -978,7 +960,7 @@
       "mapsUrl": "https://maps.app.goo.gl/ZUmfL5A2ssmBaho77"
     },
     {
-      "id": 43,
+      "id": 42,
       "name": "Lourdes Cano",
       "address": "Cap. Rivas Fernando de la Mora, 2300",
       "phone": "",
@@ -996,7 +978,7 @@
       "mapsUrl": "https://maps.app.goo.gl/dHhcYo4VfVVzCGsi6"
     },
     {
-      "id": 44,
+      "id": 43,
       "name": "Patricia Ojeda",
       "address": "MCWV+V9H, Manuel Talavera, Asunción 001405",
       "phone": "",
