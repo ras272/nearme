@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-10T13:40:27.455Z",
+  "generated_at": "2025-11-10T13:44:59.954Z",
   "total_clinics": 43,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -971,10 +971,10 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "Asuncion",
+      "city": "Fernando de la Mora",
       "distance": "0 km",
-      "lat": -25.3171178,
-      "lng": -57.5263959,
+      "lat": -25.31783233,
+      "lng": -57.52737809,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/dHhcYo4VfVVzCGsi6"
     },
