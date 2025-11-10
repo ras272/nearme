@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-06T17:31:34.786Z",
+  "generated_at": "2025-11-10T12:11:22.410Z",
   "total_clinics": 43,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -237,7 +237,7 @@
       "id": 4,
       "name": "Plena Real Care",
       "address": "Alberto De Sousa 5118, Asunción 001413\r\n",
-      "phone": "0991 450101",
+      "phone": "992924487",
       "whatsapp": "0991 450101",
       "email": "",
       "hours": "",
@@ -454,12 +454,13 @@
       "id": 15,
       "name": "Silana",
       "address": "Av. Bruno Guggiari 438, Asunción 110707",
-      "phone": "59521333990",
+      "phone": "984303033",
       "whatsapp": "59521333990",
       "email": "",
       "hours": "",
       "equipment": [
-        "CMSlim"
+        "CMSlim",
+        "Cavix"
       ],
       "city": "Asuncion",
       "distance": "0 km",
