@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-10T13:44:59.954Z",
+  "generated_at": "2025-11-10T14:50:16.508Z",
   "total_clinics": 43,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -210,8 +210,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.29838616,
-      "lng": -57.58828995,
+      "lat": -25.29856602,
+      "lng": -57.58822864,
       "treatment": "Limpieza facial, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/TnpWFHGF4U19d4x47"
     },
@@ -288,8 +288,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2684406,
-      "lng": -57.56282311,
+      "lat": -25.26863227,
+      "lng": -57.56271643,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tonificación muscular, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/XkZsHsZPi98RWKzy5"
     },
@@ -346,8 +346,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2551666,
-      "lng": -57.5772593,
+      "lat": -25.2551303,
+      "lng": -57.5770648,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/SGKfuFDWyFo21J619"
     },
@@ -550,8 +550,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2902166,
-      "lng": -57.5998801,
+      "lat": -25.25887109,
+      "lng": -57.58260765,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel",
       "mapsUrl": "https://maps.app.goo.gl/Ff5RhgPjKUYzRqD48"
     },
@@ -568,8 +568,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2901629,
-      "lng": -57.57711579999999,
+      "lat": -25.29013025,
+      "lng": -57.57725194,
       "treatment": "Depilación",
       "mapsUrl": "https://maps.app.goo.gl/wqWCjuM2qGTLsqbH6"
     },
@@ -586,8 +586,8 @@
       ],
       "city": "CDE",
       "distance": "0 km",
-      "lat": -25.524881,
-      "lng": -54.6211164,
+      "lat": -25.52474234,
+      "lng": -54.6211811,
       "treatment": "Depilación",
       "mapsUrl": "https://maps.app.goo.gl/F6ndty1VjJPPU9fQ9"
     },
@@ -604,8 +604,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2718579,
-      "lng": -57.5765251,
+      "lat": -25.27190262,
+      "lng": -57.57652632,
       "treatment": "Depilación",
       "mapsUrl": "https://maps.app.goo.gl/fwWJX8cfBy9itQ8u6"
     },
@@ -623,8 +623,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2797468,
-      "lng": -57.5666026,
+      "lat": -25.27794573,
+      "lng": -57.56562637,
       "treatment": "Celulitis, Lesiones pigmentarias, Lesiones vasculares, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/dRz2ripfeMXyavwe6"
     },
@@ -641,8 +641,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2984247,
-      "lng": -57.5651092,
+      "lat": -25.29831918,
+      "lng": -57.56528824,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/1gsD14TwfJirRxap9"
     },
@@ -736,8 +736,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.289799,
-      "lng": -57.58017339999999,
+      "lat": -25.28790722,
+      "lng": -57.5841185,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/ka1u9qwr7Mb4M4Q96"
     },
@@ -828,8 +828,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2874802,
-      "lng": -57.5786312,
+      "lat": -25.28737857,
+      "lng": -57.57850854,
       "treatment": "Celulitis, Reducción, Tonificación muscular, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/41aVz799jdRDWPR96"
     },
@@ -847,8 +847,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2645259,
-      "lng": -57.5774885,
+      "lat": -25.27040561,
+      "lng": -57.57213461,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel",
       "mapsUrl": "https://maps.app.goo.gl/xPLaTRsyvrHst8bX9"
     },
@@ -937,8 +937,8 @@
       ],
       "city": "Pedro Juan Caballero",
       "distance": "0 km",
-      "lat": -22.5418501,
-      "lng": -55.7302693,
+      "lat": -22.54190839,
+      "lng": -55.73032719,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/67RUDQsEA1rbiNDd7"
     },
@@ -955,8 +955,8 @@
       ],
       "city": "San Lorenzo",
       "distance": "0 km",
-      "lat": -25.3045029,
-      "lng": -57.5264384,
+      "lat": -22.54190369,
+      "lng": -55.73031314,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/ZUmfL5A2ssmBaho77"
     },
