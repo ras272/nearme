@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-10T12:15:13.336Z",
+  "generated_at": "2025-11-10T13:37:25.479Z",
   "total_clinics": 43,
   "equipment_treatment_map": {
     "Alquimia": [
@@ -891,7 +891,7 @@
     {
       "id": 38,
       "name": "Dr Jorge Rotela",
-      "address": "!",
+      "address": "Edificio Le Blanc, Guido Spano 7000, Cd. del Este 7000",
       "phone": "",
       "whatsapp": "",
       "email": "",
@@ -901,10 +901,10 @@
       ],
       "city": "CDE",
       "distance": "0 km",
-      "lat": -23.442503,
-      "lng": -58.443832,
+      "lat": -25.5119775,
+      "lng": -54.64463660000001,
       "treatment": "Lesiones pigmentarias, Lesiones vasculares, Rejuvenecimiento de piel, Tratamientos faciales",
-      "mapsUrl": ""
+      "mapsUrl": "https://maps.app.goo.gl/zmajTuMfPgsosQ4D9"
     },
     {
       "id": 39,
