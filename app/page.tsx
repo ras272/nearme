@@ -302,11 +302,10 @@ export default function ClinicFinder() {
             <div
               key={clinic.id}
               id={`clinic-${clinic.id}`}
-              className={`group bg-gradient-to-br from-white to-blue-50/30 border border-blue-100/50 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200/60 transition-all duration-300 cursor-pointer ${
-                selectedClinic?.id === clinic.id
+              className={`group bg-gradient-to-br from-white to-blue-50/30 border border-blue-100/50 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200/60 transition-all duration-300 cursor-pointer ${selectedClinic?.id === clinic.id
                   ? "ring-2 ring-blue-500 ring-offset-2 bg-gradient-to-br from-blue-50/50 to-blue-100/30"
                   : ""
-              }`}
+                }`}
               onClick={() => setSelectedClinic(clinic)}
             >
               {/* Header con info principal */}
@@ -692,7 +691,7 @@ export default function ClinicFinder() {
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">
-                      Equipo Médico
+                      Modelo de Equipo
                     </label>
                     <Select
                       value={selectedEquipment}
