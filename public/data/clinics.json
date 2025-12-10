@@ -1,6 +1,6 @@
 {
-  "generated_at": "2025-11-10T14:50:16.508Z",
-  "total_clinics": 43,
+  "generated_at": "2025-12-10T14:46:46.354Z",
+  "total_clinics": 44,
   "equipment_treatment_map": {
     "Alquimia": [
       "Limpieza facial",
@@ -173,6 +173,9 @@
       "Tonificación muscular",
       "Reducción",
       "Celulitis"
+    ],
+    "FraxFace Lite": [
+      "Tensado de piel"
     ]
   },
   "clinics": [
@@ -346,8 +349,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2551303,
-      "lng": -57.5770648,
+      "lat": -25.2553413,
+      "lng": -57.5772593,
       "treatment": "Celulitis, Depilación, Reducción, Rejuvenecimiento de piel, Tensado de piel, Tonificación muscular, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/SGKfuFDWyFo21J619"
     },
@@ -791,8 +794,8 @@
       ],
       "city": "Asuncion",
       "distance": "0 km",
-      "lat": -25.2983069,
-      "lng": -57.5613567,
+      "lat": -25.2982117,
+      "lng": -57.5613933,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/mmbE48w7WpxkAj9P8"
     },
@@ -995,6 +998,24 @@
       "lng": -57.5541697,
       "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
       "mapsUrl": "https://maps.app.goo.gl/6E5opRXCP3r693sw5"
+    },
+    {
+      "id": 44,
+      "name": "Do Skin Studio",
+      "address": "Prócer Juan B. Acosta 126, Asunción 001526\r",
+      "phone": "595976684600",
+      "whatsapp": "595976684600",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "FraxFace Lite"
+      ],
+      "city": "Asuncion",
+      "distance": "0 km",
+      "lat": -25.27965873,
+      "lng": -57.56038356,
+      "treatment": "Tensado de piel",
+      "mapsUrl": "https://maps.app.goo.gl/3PyDKJpCu8XLipcu5"
     }
   ]
 }
