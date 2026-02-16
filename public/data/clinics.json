@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-09T18:19:57.341Z",
-  "total_clinics": 44,
+  "generated_at": "2026-02-16T13:29:35.141Z",
+  "total_clinics": 45,
   "equipment_treatment_map": {
     "Alquimia": [
       "Limpieza facial",
@@ -993,7 +993,7 @@
       "equipment": [
         "Reaction"
       ],
-      "city": "",
+      "city": "Asuncion",
       "distance": "0 km",
       "lat": -25.2989412,
       "lng": -57.5541697,
@@ -1017,6 +1017,24 @@
       "lng": -57.56038356,
       "treatment": "Tensado de piel",
       "mapsUrl": "https://maps.app.goo.gl/3PyDKJpCu8XLipcu5"
+    },
+    {
+      "id": 45,
+      "name": "Liz Cabello Yang\r",
+      "address": "F739+RRJ, Av. Carlos Domínguez, Pedro Juan Caballero 130113",
+      "phone": "595971818510",
+      "whatsapp": "595971818510",
+      "email": "",
+      "hours": "",
+      "equipment": [
+        "Unyque"
+      ],
+      "city": "PJC",
+      "distance": "0 km",
+      "lat": -22.54539988,
+      "lng": -55.73048257,
+      "treatment": "Celulitis, Reducción, Tensado de piel, Tratamientos faciales",
+      "mapsUrl": "https://maps.app.goo.gl/364ZnwsqaEp35jo68"
     }
   ]
 }
